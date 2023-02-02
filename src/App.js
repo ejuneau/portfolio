@@ -38,9 +38,9 @@ function App() {
     <Header backgroundColor={backgroundColor}/>
     <div className="App" style={{"backgroundColor": backgroundColor}}>
         <ul className="Portfolio">
-          <li onMouseEnter={artemisHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Artemis/" target="_blank">Artemis for Reddit</a></li>
-          <li onMouseEnter={jammmingHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Jammming/" target="_blank">Jammming for Spotify</a></li>
-          <li onMouseEnter={ravenousHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Ravenous/" target="_blank">Ravenous for Yelp</a></li>
+          <li onMouseEnter={artemisHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Artemis/" target="_blank" rel="noreferrer">Artemis for Reddit</a></li>
+          <li onMouseEnter={jammmingHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Jammming/" target="_blank" rel="noreferrer">Jammming for Spotify</a></li>
+          <li onMouseEnter={ravenousHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Ravenous/" target="_blank" rel="noreferrer">Ravenous for Yelp</a></li>
         </ul>
     </div>
     <Footer backgroundColor={backgroundColor}/>
