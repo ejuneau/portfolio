@@ -1,38 +1,49 @@
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:'Times New Roman', Times, serif
+}
+p {
+  font-family: 'Poppins';
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  height: 80vh;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease
+}
+.App .Portfolio {
+  padding-left: 0;
+}
+.App .Portfolio li {
+  list-style-type: none;
+  text-align: center;
+  padding: 0.5vh 0;
+}
+.App .Portfolio li a {
+  text-decoration: none;
+  color: white;
+  font-size: 5em;
+  transition: font-size 0.2s ease;
+}
+.App .Portfolio li a:hover {
+  font-size: 6em;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  
+  .App .Portfolio li a {
+
+    font-size: 2em;
+
   }
-  to {
-    transform: rotate(360deg);
+  .App .Portfolio li a:hover {
+    font-size: 2.4em;
   }
 }
