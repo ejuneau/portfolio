@@ -1,0 +1,27 @@
+.Header {
+    display: flex;
+    width: 100%;
+    color: #FFF;
+    justify-content: space-evenly;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    transition: background-color 0.2s ease
+}
+.Header nav {
+    display: flex;
+    align-self: center;
+}
+
+.Header nav li {
+    list-style-type: none;
+    padding: 0 1em;
+}
+
+.Header nav li a, .Header h1 a {
+    text-decoration: none;
+    color: white;
+}
+.Header h1 {
+    align-self: center;
+}

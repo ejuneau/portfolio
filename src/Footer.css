@@ -1,0 +1,14 @@
+.Footer {
+    display: flex;
+    width: 100%;
+    color: #FFF;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    height: 10vh;
+    transition: background-color 0.2s ease
+}
+.Footer .disclaimer {
+    font-size: 12px;
+    text-align: center;
+}
