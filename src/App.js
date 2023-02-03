@@ -8,7 +8,7 @@ import Modal from 'react-modal';
 
 const offBlack = "#0F0F0F";
 const jammmingColor = '#010c3f';
-const artemisColor = '#415a74';
+const artemisColor = '#3D5A80';
 const ravenousColor = '#cca353';
 
 const modalStyles = {
