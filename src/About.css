@@ -1,0 +1,38 @@
+.AboutContainer {
+    background-color: #0F0F0F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 75vh;
+    width: 75vw;
+}
+.CloseModal {
+    align-self: center;
+    cursor: pointer;
+}
+.ModalOverlay {
+    background-color: #0F0F0F;
+    width: 75vw;
+    height: 75vh;
+    position: absolute;
+    top: 12.5vh;
+    left: 12.5vw;
+}
+.About {
+    align-self: center;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}
+

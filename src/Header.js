@@ -6,7 +6,7 @@ function Header(props) {
       <h1><a href="./">EJ</a></h1>
       <nav>
         <li><a href="/">Portfolio</a></li>
-        <li><a href="/">About</a></li>
+        <li onClick={props.openModal} id="about">About</li>
       </nav>
     </header>
   );
