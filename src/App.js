@@ -5,11 +5,7 @@ import Footer from './Footer';
 import About from './About';
 import Modal from 'react-modal';
 
-
 const offBlack = "#0F0F0F";
-const jammmingColor = '#010c3f';
-const artemisColor = '#3D5A80';
-const ravenousColor = '#cca353';
 
 const modalStyles = {
   content: {
@@ -27,37 +23,33 @@ const modalStyles = {
 
 function App() {
 
-
+  const [modalIsOpen, setIsOpen] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState(offBlack);
  
   useEffect(() => {
     console.log(`Changing Background ${backgroundColor === offBlack ? 'back ': ''}to ${backgroundColor}...`);
   }, [backgroundColor]);
  
-  const artemisHandler = () => {
-    setBackgroundColor(artemisColor);
-  }
-  const jammmingHandler = () => {
-    setBackgroundColor(jammmingColor);
-  }
-  const ravenousHandler = () => {
-    setBackgroundColor(ravenousColor);
-  }
   const exitHandler = () => {
     setBackgroundColor(offBlack);
   }
 
-  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {setIsOpen(true)}
+  function closeModal() {setIsOpen(false)}
+  Modal.setAppElement('#root');
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  Modal.setAppElement('#root')
+  const sites = [
+    {
+      color: "#fc5130",
+      link: "https://ejuneau.github.io/spyglass/",
+      title: "Spyglass Eyewear"
+    },
+    {
+      color: "#242f40",
+      link: "https://ejuneau.github.io/soupgang/",
+      title: "OpenKitchen"
+    }
+  ]
 
   return (
     <>
@@ -74,9 +66,11 @@ function App() {
         <About closeModal={closeModal} />
       </Modal>
         <ul className="Portfolio" id="Portfolio">
-          <li onMouseEnter={artemisHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Artemis/" target="_blank" rel="noreferrer">Artemis for Reddit</a></li>
-          <li onMouseEnter={jammmingHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Jammming/" target="_blank" rel="noreferrer">Jammming for Spotify</a></li>
-          <li onMouseEnter={ravenousHandler} onMouseLeave={exitHandler}><a href="https://ejuneau.github.io/CA_Ravenous/" target="_blank" rel="noreferrer">Ravenous for Yelp</a></li>
+          {
+            sites.map(site => {
+              return <li className="list-item"><a onMouseEnter={() => setBackgroundColor(site.color)}  onMouseLeave={exitHandler} href={site.link} target="_blank" rel="noreferrer">{site.title}</a></li>
+            })
+          }
         </ul>
     </div>
     <Footer backgroundColor={backgroundColor}/>
