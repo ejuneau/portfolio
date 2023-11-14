@@ -5,11 +5,16 @@
     flex-direction: column;
     justify-content: center;
     height: 75vh;
-    width: 75vw;
+    width: 100vw;
 }
 .CloseModal {
     align-self: center;
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color:#0F0F0F;
+}
+.CloseModal:hover {
+    text-decoration-color: #FFFFFF;
 }
 .ModalOverlay {
     background-color: #0F0F0F;
@@ -21,6 +26,7 @@
 }
 .About {
     align-self: center;
+    padding: 10vw;
 }
 
 .ReactModal__Overlay {

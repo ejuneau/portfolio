@@ -1,5 +1,7 @@
 
-* {outline: 1px solid red;   transition: all 0.2s ease-in-out;}
+* {
+  /* outline: 1px solid red;    */
+  transition: all 0.2s ease-in-out;}
 @font-face {
   font-family: 'Libre Bodoni';
   src: url(./Assets/Libre-Bodoni-Regular.ttf);
@@ -9,10 +11,14 @@
   src: url(./Assets/Poppins-Regular.ttf);
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family:'Libre Bodoni', Times, serif
+  font-family:'Libre Bodoni', Times, serif;
 }
 p {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+html {
+  font-size: calc(12.5px + 0.4vw);
 }
 
 .App {
@@ -35,15 +41,15 @@ p {
 .list-item a {
   text-decoration: none;
   color: white;
-  font-size: 5em;
+  font-size: 4rem;
 }
 .list-item a:hover {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 
 
-@media only screen 
+/* @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
   
@@ -55,4 +61,4 @@ and (max-device-width : 480px) {
   .App .Portfolio li a:hover {
     font-size: 2.4em;
   }
-}
+} */

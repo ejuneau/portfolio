@@ -6,25 +6,34 @@
     height: 10vh;
     position: absolute;
     top: 0;
-    transition: background-color 0.2s ease
+    transition: background-color 0.2s ease;
+    align-items: center;
 }
-.Header nav {
+ .Header nav {
     display: flex;
     align-self: center;
-}
+} 
 
 .Header nav li {
     list-style-type: none;
     padding: 0 1em;
+    text-decoration: underline;
+    text-decoration-color: rgba(0,0,0,0);
+}
+.Header nav li:hover {
+    text-decoration-color: #FFFFFF;
 }
 
 .Header nav li a, .Header h1 a {
-    text-decoration: none;
     color: white;
-}
-.Header h1 {
+    text-decoration: none;
+} 
+
+.Header h1 a {
     align-self: center;
+    user-select: none;
+    cursor: pointer;
 }
 #about {
     cursor:pointer;
-}
+} 

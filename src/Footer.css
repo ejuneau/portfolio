@@ -9,7 +9,7 @@
     transition: background-color 0.2s ease
 }
 .Footer .disclaimer {
-    font-size: 12px;
+    font-size: 0.8rem;
     text-align: center;
     align-self: center;
 }
