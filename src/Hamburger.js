@@ -33,7 +33,7 @@ export default function Hamburger(props) {
                     display: flex;
                     visibility: ${props.hamburgerOpen? 'visible' : 'hidden'};
                     opacity: ${props.hamburgerOpen? '1' : '0'};
-                    background-color: black;
+                    background-color: #0F0F0F;
                     top: 0;
                     height: 100vh;
                     width: 100vw;

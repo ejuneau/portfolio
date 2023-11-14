@@ -24,6 +24,10 @@ header nav li {
 header nav li:hover {
     text-decoration-color: #FFFFFF;
 }
+.active-link {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
 
 header nav li a, header h1 a {
     color: white;
