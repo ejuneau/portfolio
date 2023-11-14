@@ -1,21 +1,24 @@
 import './Header.css';
 import Hamburger from './Hamburger';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 function Header(props) {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
   return (
-    <header className="Header" style={{"backgroundColor": props.backgroundColor}}>
-      <h1><a href="./">EJ</a></h1>
+    // <header className="Header" style={{"backgroundColor": props.backgroundColor}}>
+    <header>
+      <h1><Link to="/">EJ</Link></h1>
       <nav>
-        <li><a href="/"><p>Portfolio</p></a></li>
-        <li onClick={props.openModal} id="about"><p>About</p></li>
-        <li><p>Contact</p></li>
+        <li><Link to="/" onClick={toggleHamburger}>Home</Link></li>
+        <li><Link to="/portfolio" onClick={toggleHamburger}>Portfolio</Link></li>
+        <li><Link to="/About" onClick={toggleHamburger}>About</Link></li>
+        <li><Link to="/Contact" onClick={toggleHamburger}>Contact</Link></li>
       </nav>
       <div className="hamburger" onClick={toggleHamburger}>
-        <Hamburger hamburgerOpen={hamburgerOpen}/>
+        <Hamburger hamburgerOpen={hamburgerOpen} />
       </div>
     </header>
   );

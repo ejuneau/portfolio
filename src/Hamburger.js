@@ -7,7 +7,7 @@ export default function Hamburger(props) {
             <div className="burger burger3" />
         </div>
 
-        <style jsx>{`
+        <style>{`
             .hamburger{
                 width:2rem;
                 height: 2rem;
@@ -43,9 +43,10 @@ export default function Hamburger(props) {
                     flex-direction: column;
                     transition: visibility 0.3s, opacity 0.3s linear;
                 }
-                }
                 header nav li {
                     list-style: none;
+                    font-size: 1.3rem;
+                    padding: 1rem;
                 }
                 .burger1{
                     transform: ${props.hamburgerOpen? 'rotate(45deg)' : 'rotate(0deg)'}

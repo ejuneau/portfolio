@@ -1,4 +1,4 @@
-.Header {
+header {
     display: flex;
     width: 100%;
     color: #FFF;
@@ -9,27 +9,28 @@
     transition: background-color 0.2s ease;
     align-items: center;
 }
- .Header nav {
+ header nav {
     display: flex;
     align-self: center;
+    font-family: 'Poppins';
 } 
 
-.Header nav li {
+header nav li {
     list-style-type: none;
     padding: 0 1em;
     text-decoration: underline;
     text-decoration-color: rgba(0,0,0,0);
 }
-.Header nav li:hover {
+header nav li:hover {
     text-decoration-color: #FFFFFF;
 }
 
-.Header nav li a, .Header h1 a {
+header nav li a, header h1 a {
     color: white;
     text-decoration: none;
 } 
 
-.Header h1 a {
+header h1 a {
     align-self: center;
     user-select: none;
     cursor: pointer;

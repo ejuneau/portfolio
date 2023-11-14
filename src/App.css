@@ -19,12 +19,12 @@ p {
 }
 html {
   font-size: calc(12.5px + 0.4vw);
+  background-color: #0F0F0F;
 }
 
 .App {
   color: white;
-  height: 80vh;
-  margin-top: 10vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
