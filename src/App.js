@@ -36,7 +36,7 @@ function App() {
   
         },
         {
-          path: "portfolio",
+          path: "projects",
           element: <Portfolio />
         },
         {

@@ -3,7 +3,7 @@ import './About.css';
 function About() {
   return (
     <div className="AboutContainer">
-      <h1 className="About">About</h1>
+      <h1 className="About" style={{marginTop: '5rem'}}>About</h1>
       <p className="About">My name is Eve Juneau (they/she), a UI and UX designer based in Montreal, 
       Canada. Specializing in web design via React.js, I'm passionate about creating user experiences 
       that stick with people.</p>

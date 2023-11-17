@@ -35,12 +35,13 @@ export default function Hamburger(props) {
                     opacity: ${props.hamburgerOpen? '1' : '0'};
                     background-color: #0F0F0F;
                     top: 0;
-                    height: 100vh;
+                    height: 102vh;
                     width: 100vw;
                     justify-content: center;
                     align-items: center;
                     position: absolute;
                     flex-direction: column;
+                    z-index: 10;
                     transition: visibility 0.3s, opacity 0.3s linear;
                 }
                 header nav li {

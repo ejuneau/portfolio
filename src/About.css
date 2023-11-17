@@ -9,6 +9,7 @@
 }
 .About {
     align-self: center;
-    padding:  0 10vw;
+    padding:  0 0;
+    width: clamp(40%, 300px, 80%);
     text-align: center;
 }
