@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e16219c3.css",
-    "main.js": "/portfolio/static/js/main.4a96f4e9.js",
-    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/spyglass-mobile.png": "/portfolio/static/media/spyglass-mobile.39e52c3cc7b839380d37.png",
-    "static/media/soupgang.png": "/portfolio/static/media/soupgang.3eeed448a159c46b01f1.png",
-    "static/media/townsquare-mobile.png": "/portfolio/static/media/townsquare-mobile.788c873ea0e0d48069eb.png",
-    "static/media/spyglass.png": "/portfolio/static/media/spyglass.beb3cfdff1e5e9b26251.png",
-    "static/media/Poppins-Regular.ttf": "/portfolio/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
-    "static/media/Libre-Bodoni-Regular.ttf": "/portfolio/static/media/Libre-Bodoni-Regular.fa211b4cb7b0b6b39ad4.ttf",
-    "static/media/soupgang-mobile.png": "/portfolio/static/media/soupgang-mobile.dcf20117db8fedb6b638.png",
-    "static/media/townsquare.png": "/portfolio/static/media/townsquare.a54649adbbad794ab509.png",
-    "static/media/arrow-left-right.svg": "/portfolio/static/media/arrow-left-right.0db36fc53f434bec32a2c554345960bb.svg",
-    "index.html": "/portfolio/index.html",
-    "main.e16219c3.css.map": "/portfolio/static/css/main.e16219c3.css.map",
-    "main.4a96f4e9.js.map": "/portfolio/static/js/main.4a96f4e9.js.map",
-    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/static/css/main.e60be332.css",
+    "main.js": "/static/js/main.59687571.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/spyglass-mobile.png": "/static/media/spyglass-mobile.39e52c3cc7b839380d37.png",
+    "static/media/soupgang.png": "/static/media/soupgang.3eeed448a159c46b01f1.png",
+    "static/media/townsquare-mobile.png": "/static/media/townsquare-mobile.788c873ea0e0d48069eb.png",
+    "static/media/spyglass.png": "/static/media/spyglass.beb3cfdff1e5e9b26251.png",
+    "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Libre-Bodoni-Regular.ttf": "/static/media/Libre-Bodoni-Regular.fa211b4cb7b0b6b39ad4.ttf",
+    "static/media/soupgang-mobile.png": "/static/media/soupgang-mobile.dcf20117db8fedb6b638.png",
+    "static/media/townsquare.png": "/static/media/townsquare.a54649adbbad794ab509.png",
+    "static/media/arrow-left-right.svg": "/static/media/arrow-left-right.0db36fc53f434bec32a2c554345960bb.svg",
+    "index.html": "/index.html",
+    "main.e60be332.css.map": "/static/css/main.e60be332.css.map",
+    "main.59687571.js.map": "/static/js/main.59687571.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e16219c3.css",
-    "static/js/main.4a96f4e9.js"
+    "static/css/main.e60be332.css",
+    "static/js/main.59687571.js"
   ]
 }
