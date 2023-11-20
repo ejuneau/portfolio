@@ -26,6 +26,9 @@ export default function Hamburger(props) {
                 transition: all 0.2s ease-in-out;
             }
             @media (max-width: 767px) {
+                #root {
+                    ${props.hamburgerOpen && 'height: 100vh; overflow: hidden;'}
+                }
                 .hamburger{
                     display: flex;
                 }
@@ -35,7 +38,7 @@ export default function Hamburger(props) {
                     opacity: ${props.hamburgerOpen? '1' : '0'};
                     background-color: #0F0F0F;
                     top: 0;
-                    height: 102vh;
+                    height: 100vh;
                     width: 100vw;
                     justify-content: center;
                     align-items: center;
@@ -43,6 +46,7 @@ export default function Hamburger(props) {
                     flex-direction: column;
                     z-index: 10;
                     transition: visibility 0.3s, opacity 0.3s linear;
+                    overflow: hidden;
                 }
                 header nav li {
                     list-style: none;
