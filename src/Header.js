@@ -7,7 +7,6 @@ function Header() {
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
-  console.log(window.location.pathname);
   return (
     // <header className="Header" style={{"backgroundColor": props.backgroundColor}}>
     <header>

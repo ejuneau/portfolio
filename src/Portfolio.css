@@ -5,11 +5,10 @@
     align-items: center;
     justify-content: center;
     flex-flow: column;
-    margin-top: 40vh;
+    margin-top: 20vh;
 }
 .portfolio-list {
     display: flex;
-    flex-flow: column;
     align-items: center;
 }
 .portfolio-item-container {
@@ -122,5 +121,21 @@
     100% {
         opacity: 1;
         transform: scaleY(-1);
+    }
+}
+@media (max-width: 767px) {
+    .portfolio {
+        margin-top: 10rem;
+    }
+    .portfolio-list {
+        width: 100vw;
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
+    }
+    .mobile-portfolio-item {
+        margin-left: 20vw;
+        margin-right: 20vw;
+        scroll-snap-align: center;
+
     }
 }
