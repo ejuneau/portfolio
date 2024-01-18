@@ -14,7 +14,7 @@ export default function Portfolio() {
             <h1>Projects</h1>
             <div className="mode-toggle" onClick={toggleMode}>
                 <FontAwesomeIcon icon={icon({name: "mobile"})} style={{opacity: isDesktop? '0.5' : '1', scale: isDesktop ? '0.9' : '1.1'}}/>
-                <Arrows className={`arrows ${isDesktop?'desktop':'mobile'}`} />
+                <Arrows className={`arrows ${isDesktop?'desktop':'mobile'}`}/>
                 <FontAwesomeIcon icon={icon({name: "display"})} style={{opacity: !isDesktop? '0.5' : '1', scale: isDesktop? '1.1' : '0.9'}}/>
             </div>
             <div className="portfolio-list" style={{flexFlow: isDesktop? 'column':'row'}}>

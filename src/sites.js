@@ -7,28 +7,29 @@ import townsquareMobile from './Assets/townsquare-mobile.png';
 
 const sites = [
     {
-        color: "#fc5130",
-        link: "https://ejuneau.github.io/spyglass/",
-        title: "Spyglass Eyewear",
-        description: "(Mockup) Sunglasses webstore.",
-        desktopImage: spyglass,
-        mobileImage: spyglassMobile
-    },
-    {
-        color: "#242f40",
-        link: "https://ejuneau.github.io/soupgang/",
-        title: "OpenKitchen",
-        description: "(Mockup) Meal Preparation service.",
-        desktopImage: soupgang,
-        mobileImage: soupgangMobile
-    },
-    {
         color: "#FFA900",
         link: "https://www.townsquaremtl.com/",
         title: "Townsquare",
         description: "Local contractor service.",
         desktopImage: townsquare,
         mobileImage: townsquareMobile
-    }
+    },
+    {
+        color: "#fc5130",
+        link: "https://spyglass-hsef.onrender.com/",
+        title: "Spyglass Eyewear",
+        description: "Sunglasses webstore.",
+        desktopImage: spyglass,
+        mobileImage: spyglassMobile
+    },
+    {
+        color: "#242f40",
+        link: "https://openkithchen.onrender.com/",
+        title: "OpenKitchen",
+        description: "Meal Preparation service.",
+        desktopImage: soupgang,
+        mobileImage: soupgangMobile
+    },
+
   ]
   export default sites;

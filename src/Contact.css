@@ -1,6 +1,7 @@
 .contact {
     color: white;
     display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 90vh;
     align-items: center;

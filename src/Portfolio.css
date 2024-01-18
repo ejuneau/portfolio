@@ -69,11 +69,13 @@
 }
 .arrows.desktop {
     animation-name: changemodetodesktop;
-    animation-duration: 1s;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
 }
 .arrows.mobile {
     animation-name: changemodetomobile;
-    animation-duration: 1s;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
 }
 .arrows {
     height: 1rem;
@@ -98,29 +100,23 @@
 }
 @keyframes changemodetomobile {
     0% {
-        transform: skew(-90deg, 0deg);
-        
+        transform: skew(-90deg, 0deg) scaleY(-1) scaleX(1);
         opacity: 0;
-    }
-    20% {
-        transform: skew(0deg, 0deg);
     }
     100% {
         opacity: 1;
+        transform: skew(0deg, 0deg) scaleY(1) scaleX(-1);
     }
+
 }
 @keyframes changemodetodesktop {
     0% {
-        transform: skew(90deg, 0deg) scaleY(-1);
+        transform: skew(90deg, 0deg) scaleY(1) scaleX(-1);
         opacity: 0;
-        
-    }
-    20% {
-        transform: skew(0deg, 0deg) scaleY(-1);
     }
     100% {
         opacity: 1;
-        transform: scaleY(-1);
+        transform: skew(0deg, 0deg) scaleY(-1) scaleX(1);
     }
 }
 @media (max-width: 767px) {

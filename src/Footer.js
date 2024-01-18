@@ -4,7 +4,7 @@ function Footer(props) {
   return (
     // <footer className="Footer" style={{"backgroundColor": props.backgroundColor}}>
     <footer className="Footer">
-      <p className="disclaimer">Copyright 2023 EJ</p>
+      <p className="disclaimer">Copyright 2024 EJ</p>
     </footer>
   );
 }
