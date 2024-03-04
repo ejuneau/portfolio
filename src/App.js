@@ -7,7 +7,7 @@ import About from './About';
 import Project from './Project';
 import NotFound from './NotFound.js';
 import Contact from './Contact';
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, ScrollRestoration } from 'react-router-dom';
 import { Outlet, RouterProvider } from 'react-router';
 
 
@@ -20,6 +20,7 @@ function App() {
     return(
       <>
       <Header />
+      <ScrollRestoration />
       <Outlet />
       <Footer />
       </>

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import ProgressiveImage from "react-progressive-graceful-image";
 import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
-import  ScrollContainer from 'react-indiana-drag-scroll';
 export default function Portfolio() {
 
 
@@ -29,23 +28,43 @@ export default function Portfolio() {
                     {
                         sites.map(site => {
                             return (
-                                // <a href={site.link} className="portfolio-item-container" rel="noreferrer" target="_blank" key={site.title}>
-                                <Link to={site.key} className="portfolio-item-container" key={site.key}>
-                                    {window.innerWidth <= 767 && <div className={`portfolio-item ${isDesktop?'desktop-portfolio-item':'mobile-portfolio-item'}`} style={{width: isDesktop?'80vw': '70vw', height: isDesktop? '45vw' : 'calc(70vw * 926 / 428)'}}>
+                                <Link to={site.key} className="portfolio-item-container" key={site.key} draggable="false">
+                                    <div className={`portfolio-item ${isDesktop?'desktop-portfolio-item':'mobile-portfolio-item'}`} 
+                                    style={{
+                                        width: isDesktop?
+                                            // isDesktop true
+                                            (window.innerWidth > 767?
+                                                // isDesktop true && innerWidth > 767
+                                            "40vw":
+                                                // isDesktop true && innerWidth <= 767
+                                            '80vw'):
+                                            // isDesktop false
+                                            (window.innerWidth > 767?
+                                                // isDesktop false && innerWidth > 767
+                                            "20vw":
+                                                // isDesktop false && innerWidth <= 767
+                                            "70vw"),
+
+                                        height: isDesktop? 
+                                            // isDesktop true
+                                            (window.innerWidth > 767?
+                                                // isDesktop true && innerWidth > 767
+                                                "22.5vw":
+                                                // isDesktop true && innerWidth <= 767
+                                                '45vw'):
+                                            (window.innerWidth > 767?
+                                                //'isDesktop false && innerWidth > 767
+                                                "calc(20vw * 926 / 428)":
+                                                // isDesktop false && innerWidth <= 767
+                                                "calc(70vw * 926 / 428)")}}>
+
                                         <h3>{site.title}</h3>
                                         <p className="portfolio-description">{site.description}</p>
+
                                         <ProgressiveImage src={isDesktop ? site.desktopImageFull : !isDesktop ? site.mobileImageFull: null} alt={site.title + ": " + site.description} placeholder={isDesktop ? site.desktopImagePh : !isDesktop ? site.mobileImagePh: null} >
                                             {(src) => <img src={src} draggable="false" alt={site.title + ": " + site.description} />}
                                         </ProgressiveImage>
-                                    </div> }
-                                    {window.innerWidth > 767 && <div className={`portfolio-item ${isDesktop?'desktop-portfolio-item':'mobile-portfolio-item'}`} style={{width: isDesktop?'40vw': '20vw', height: isDesktop? '22.5vw' : 'calc(20vw * 926 / 428)'}}>
-                                        <h3>{site.title}</h3>
-                                        <p className="portfolio-description">{site.description}</p>
-                                        <ProgressiveImage src={isDesktop ? site.desktopImageFull : !isDesktop ? site.mobileImageFull: null} alt={site.title + ": " + site.description} placeholder={isDesktop ? site.desktopImagePh : !isDesktop ? site.mobileImagePh: null} >
-                                            {(src) => <img src={src} draggable="false" alt={site.title + ": " + site.description} />}
-                                        </ProgressiveImage>
-                                    </div> }
-                                 {/* </a> */}
+                                    </div>
                                 </Link>
                             )
                         })

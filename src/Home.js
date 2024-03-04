@@ -15,7 +15,6 @@ export default function Home(props) {
               {
                 sites.slice(0,3).map(site => {
                 return <li className="list-item" key={site.title}><a onMouseEnter={() => setBackgroundColor(site.color)} onMouseLeave={()=> exitHandler()} href={site.link} target="_blank" rel="noreferrer">{site.title}</a></li>
-                //    return <li className="list-item" key={site.title}><a href={site.link} target="_blank" rel="noreferrer">{site.title}</a></li>
 
                 })
                 
