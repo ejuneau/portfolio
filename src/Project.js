@@ -25,7 +25,7 @@ function Project() {
       <ProgressiveImage src={isDesktop ? project.desktopImageFull : !isDesktop ? project.mobileImageFull: null} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : !isDesktop ? project.mobileImagePh: null} >
           {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
       </ProgressiveImage>      
-      <h1>{project.title}</h1>
+      <div style={{display: "flex", alignItems: "baseline"}}><h1>{project.title}</h1> <a href={project.link} target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit</a></div>
       <p>{project.longDescription}</p>
       <h2>I worked on:</h2>
       <ul>

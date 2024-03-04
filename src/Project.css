@@ -15,15 +15,13 @@
 .project-image {
   width: 80%;
 }
-.project-container a {
-  font-family: "Poppins";
-  align-self: flex-start;
-  margin-bottom: 5vh;
-}
+
 .project-container a svg {
   margin-right: 5px;
 }
 .back {
   position: sticky;
   top: 10vh;
+  margin-bottom: 5vh;
+  align-self: flex-start;
 }
