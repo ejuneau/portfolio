@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Portfolio from './Portfolio';
 import About from './About';
+import Project from './Project';
 import NotFound from './NotFound.js';
 import Contact from './Contact';
 import { createBrowserRouter } from 'react-router-dom';
@@ -38,6 +39,10 @@ function App() {
         {
           path: "projects",
           element: <Portfolio />
+        },
+        {
+          path: "projects/:projectKey",
+          element: <Project />
         },
         {
           path: "about",

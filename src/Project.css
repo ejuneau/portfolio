@@ -1,0 +1,11 @@
+.project-container {
+  height: 80vh;
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-container * {
+  color: white;
+  outline: 1px solid red;
+}

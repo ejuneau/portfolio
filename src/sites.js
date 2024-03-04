@@ -4,7 +4,6 @@ import soupgangMobileFull from './Assets/images/mobile/full/soupgangMobileFull.p
 import soupgangMobilePh from './Assets/images/mobile/ph/soupgangMobilePh.png';
 
 
-
 import townsquareDesktopFull from './Assets/images/desktop/full/townsquareDesktopFull.png';
 import townsquareDesktopPh from './Assets/images/desktop/ph/townsquareDesktopPh.png';
 import townsquareMobileFull from './Assets/images/mobile/full/townsquareMobileFull.png';
@@ -21,6 +20,7 @@ import spyglassMobilePh from './Assets/images/mobile/ph/spyglassMobilePh.png';
 const sites = [
     {
         color:              "#FFA900",
+        key:                "townsquare",
         link:               "https://www.townsquaremtl.com/",
         title:              "Townsquare",
         description:        "Local contractor service.",
@@ -31,6 +31,7 @@ const sites = [
     },
     {
         color:              "#FC5130",
+        key:                "spyglass",
         link:               "https://spyglass-hsef.onrender.com/",
         title:              "Spyglass Eyewear",
         description:        "Sunglasses webstore.",
@@ -41,6 +42,7 @@ const sites = [
     },
     {
         color:              "#242F40",
+        key:                "openkitchen",
         link:               "https://openkithchen.onrender.com/",
         title:              "OpenKitchen",
         description:        "Meal Preparation service.",
