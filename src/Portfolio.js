@@ -1,9 +1,10 @@
 import './Portfolio.css';
 import sites from './sites';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import ProgressiveImage from "react-progressive-graceful-image";
+import { useDraggable } from 'react-use-draggable-scroll';
 import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
 export default function Portfolio() {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
@@ -14,9 +15,9 @@ export default function Portfolio() {
         <div className="portfolio">
             <h1>Projects</h1>
             <div className="mode-toggle" onClick={toggleMode}>
-                <FontAwesomeIcon icon={icon({name: "mobile"})} style={{opacity: isDesktop? '0.5' : '1', scale: isDesktop ? '0.9' : '1.1'}}/>
+                <FontAwesomeIcon icon={icon({name: "mobile"})} className="device" style={{opacity: isDesktop? '0.5' : '1', scale: isDesktop ? '0.9' : '1.1'}} />
                 <Arrows className={`arrows ${isDesktop?'desktop':'mobile'}`}/>
-                <FontAwesomeIcon icon={icon({name: "display"})} style={{opacity: !isDesktop? '0.5' : '1', scale: isDesktop? '1.1' : '0.9'}}/>
+                <FontAwesomeIcon icon={icon({name: "display"})} className="device" style={{opacity: !isDesktop? '0.5' : '1', scale: isDesktop? '1.1' : '0.9'}}/>
             </div>
 
             <div className="portfolio-list" style={{flexFlow: isDesktop? 'column':'row'}}>

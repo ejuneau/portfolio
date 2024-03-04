@@ -42,3 +42,49 @@ header h1 a {
 #about {
     cursor:pointer;
 } 
+
+.logo {
+    display:flex;
+    position: absolute;
+    top: 0;
+    height: 10vh;
+}
+.logo * {
+    display:flex;
+    align-items: center;
+    font-family: 'Libre Bodoni';
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.logo-text-container {
+    margin: 0;
+}
+.logo-hide {
+    /* set this back to 0 when done testing */
+    opacity: 0.0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.logo:hover {
+
+    * {
+        font-size: 1em;
+    }
+    .logo-hide {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    .initial-e {
+        margin-right: 0;
+    }
+    .initial-j {
+        margin-left: 0;
+    }
+
+}
+.initial-e {
+    margin-right: -30px;
+}
+.initial-j {
+    margin-left: -30px;
+}
