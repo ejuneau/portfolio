@@ -16,3 +16,6 @@
 a.About {
     color: white;
 }
+.About a {
+    color: white;
+}

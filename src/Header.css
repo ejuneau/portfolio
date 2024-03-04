@@ -44,10 +44,8 @@ header h1 a {
 } 
 
 .logo {
-    display:flex;
     position: absolute;
     top: 0;
-    height: 10vh;
 }
 .logo * {
     display:flex;
@@ -59,21 +57,26 @@ header h1 a {
 }
 .logo-text-container {
     margin: 0;
-}
-.logo-hide {
-    /* set this back to 0 when done testing */
-    opacity: 0.0;
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-}
-.logo:hover {
+    height: 10vh;
 
+}
+
+.logo-hide-uneau, .logo-hide-ve {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    opacity: 0;
+}
+
+.logo:hover {
+    margin-left: -1em;
     * {
         font-size: 1em;
     }
-    .logo-hide {
-        opacity: 1;
+    .logo-hide-uneau, .logo-hide-ve {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        opacity: 1;
+        transition: clip-path 0.5s ease-in-out opacity 0.5s ease-in-out;
     }
+
     .initial-e {
         margin-right: 0;
     }
@@ -83,8 +86,48 @@ header h1 a {
 
 }
 .initial-e {
-    margin-right: -30px;
+    margin-right: -0.6em;
 }
 .initial-j {
-    margin-left: -30px;
+    margin-left: -0.6em;
+}
+
+@media (max-width: 767px) {
+    .logo:hover * {
+        font-size: 0.9em;
+    }
+
+}
+
+/* @keyframes mouseonclip {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+@keyframes mouseoutclip {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    100% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+} */
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

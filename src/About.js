@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './About.css';
 
 function About() {
@@ -11,7 +11,7 @@ function About() {
       <p className="About">With over 4 years of experience both in freelance as well as company web
        development, I offer services ranging from consultation, to design, to fully building and
        hosting your ideas and bringing them to life.</p>
-       <p className="About">If you'd like to get in touch feel free to reach out by way of the <NavLink to="/Contact" className="About custom-underline" >Contact</NavLink> page of this website. </p>
+       <p className="About">If you'd like to get in touch feel free to reach out by way of the <Link to="/Contact" >Contact</Link> page of this website. </p>
        <p className="About">Cheers!</p>
     </div>
   );
