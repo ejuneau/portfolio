@@ -51,7 +51,8 @@ header h1 a {
     display:flex;
     align-items: center;
     font-family: 'Libre Bodoni';
-    font-size: 1.1em;
+    font-size: 1em;
+    scale: 1.1;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -60,16 +61,19 @@ header h1 a {
     height: 10vh;
 
 }
-
+.initial-e, .initial-j {
+    z-index: 3
+}
 .logo-hide-uneau, .logo-hide-ve {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
     opacity: 0;
+    z-index: 1;
 }
 
 .logo:hover {
     margin-left: -1em;
     * {
-        font-size: 1em;
+        scale: 1;
     }
     .logo-hide-uneau, .logo-hide-ve {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -86,15 +90,25 @@ header h1 a {
 
 }
 .initial-e {
-    margin-right: -0.6em;
+    margin-right: -0.55em;
 }
 .initial-j {
-    margin-left: -0.6em;
+    margin-left: -0.7em;
 }
 
 @media (max-width: 767px) {
-    .logo:hover * {
-        font-size: 0.9em;
+
+
+    header {
+        justify-content: space-between;
+    }
+    .logo {
+        left:2em;
+    }
+    .hamburger {
+        position: absolute;
+        right: 0;
+        padding: 2em;
     }
 
 }
@@ -129,5 +143,13 @@ header h1 a {
     }
     100% {
         opacity: 0;
+    }
+}
+@media(max-width: 767px) {
+    .initial-e {
+        margin-right: -0.70em;
+    }
+    .initial-j {
+        margin-left: -0.8em;
     }
 }

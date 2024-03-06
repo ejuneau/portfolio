@@ -47,27 +47,11 @@ html {
   font-size: 5rem;
 }
 
-
-
-/* @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  
-  .App .Portfolio li a {
-
-    font-size: 2em;
-
-  }
-  .App .Portfolio li a:hover {
-    font-size: 2.4em;
-  }
-} */
-
 @keyframes fadein {
   from {opacity: 0;}
   to {opacity: 1;}
 }
-.portfolio, .contact, .Portfolio, .About {
+.portfolio, .contact, .Portfolio, .About, .Project, .project-container, .desktop-portfolio-item, .mobile-portfolio-item {
   animation-name: fadein;
   animation-duration: 0.5s;
 }

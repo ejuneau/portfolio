@@ -15,6 +15,9 @@
 .portfolio-item-container {
     text-decoration: none;
     color: white;
+    position: relative;
+}
+.portfolio-item h3 {
     font-size: 1.4rem;
 }
 .portfolio-item {
@@ -30,11 +33,11 @@
 }
 .desktop-portfolio-item {
     animation-name: fadeoutin;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
 }
 .mobile-portfolio-item {
     animation-name: fadeinout;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
 }
 .portfolio-item img {
     width: 100%;
@@ -45,22 +48,17 @@
 .Portfolio a {
     font-family: "libre bodoni"
 }
-.portfolio-item:hover img {
-    scale: 90%;
-    filter: blur(30px);
-    opacity: 0.3;
-}
-.portfolio-item p, .portfolio-item h3 {
+
+.portfolio-item p, .portfolio-item h3, .portfolio-item a {
     opacity: 0;
-    z-index: 3;
     color: white;
+    margin: 0;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select:none;
+    scale: .9;
+    filter: blur(30px);
 
-}
-.portfolio-item:hover p, .portfolio-item:hover h3 {
-    opacity: 1;
 }
 .mode-toggle {
     display: flex;
@@ -88,6 +86,21 @@
     height: 1rem;
     width: 1rem;
     filter: invert(1);
+}
+
+.chevron {
+    height: 6%; 
+    position: absolute;
+    top: 47%;
+    bottom: 47%;
+
+
+}
+.chevron-left {
+    left: 8.5%;
+}
+.chevron-right {
+    right: 8.5%;
 }
 @keyframes fadeoutin {
     0% {
@@ -126,6 +139,20 @@
         transform: scaleY(-1) scaleX(1);
     }
 }
+@media (min-width: 767px) {
+    .portfolio-item:hover img {
+        scale: 90%;
+        filter: blur(30px);
+        opacity: 0.3;
+    }
+    .portfolio-item:hover p, .portfolio-item:hover h3, .portfolio-item:hover a {
+        opacity: 1;
+        scale: 1.1;
+        filter: blur(0px);
+        z-index: 3;
+    }
+}
+
 @media (max-width: 767px) {
     .portfolio {
         margin-top: 10rem;
@@ -140,6 +167,17 @@
         margin-right: 20vw;
         scroll-snap-align: center;
 
+    }
+    .portfolio-item.active p, .portfolio-item.active h3, .portfolio-item.active a {
+        opacity: 1;
+        scale: 1.1;
+        filter: blur(0px);
+        z-index: 3;
+    }
+    .portfolio-item.active img {
+        scale: 90%;
+        filter: blur(30px);
+        opacity: 0.3;
     }
 }
 

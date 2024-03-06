@@ -13,34 +13,34 @@ function Header() {
     <header>
         <h1><NavLink to="/" ><Logo /></NavLink></h1>
       <nav>
-        <li><NavLink   className={({ isActive, isPending, isTransitioning }) =>
+        <li><NavLink  draggable="false" className={({ isActive, isPending, isTransitioning }) =>
           [
             isPending ? "pending" : "",
             isActive ? "active-link" : "",
             isTransitioning ? "transitioning" : "",
           ].join(" ")}         to="/"          onClick={toggleHamburger}>Home</NavLink></li>
-        <li><NavLink className={({ isActive, isPending, isTransitioning }) =>
+        <li><NavLink draggable="false" className={({ isActive, isPending, isTransitioning }) =>
           [
             isPending ? "pending" : "",
             isActive ? "active-link" : "",
             isTransitioning ? "transitioning" : "",
           ].join(" ")}   to="/projects"  onClick={toggleHamburger}>All Projects</NavLink></li>
-        <li><NavLink className={({ isActive, isPending, isTransitioning }) =>
+        <li><NavLink draggable="false" className={({ isActive, isPending, isTransitioning }) =>
           [
             isPending ? "pending" : "",
             isActive ? "active-link" : "",
             isTransitioning ? "transitioning" : "",
           ].join(" ")}      to="/about"     onClick={toggleHamburger}>About</NavLink></li>
-        <li><NavLink className={({ isActive, isPending, isTransitioning }) =>
+        <li><NavLink draggable="false" className={({ isActive, isPending, isTransitioning }) =>
           [
             isPending ? "pending" : "",
             isActive ? "active-link" : "",
             isTransitioning ? "transitioning" : "",
           ].join(" ")}    to="/contact"   onClick={toggleHamburger}>Contact</NavLink></li>
       </nav>
-      <div className="hamburger" onClick={toggleHamburger}>
-        <Hamburger hamburgerOpen={hamburgerOpen} />
-      </div>
+
+        <Hamburger draggable="false" hamburgerOpen={hamburgerOpen} toggleHamburger={toggleHamburger}/>
+
     </header>
   );
 }

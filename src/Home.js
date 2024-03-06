@@ -9,7 +9,6 @@ export default function Home(props) {
 
       return (
         <>
-        {/* <div className="App" style={{"backgroundColor": props.backgroundColor}}> */}
         <div className="App">
             <ul className="Portfolio" id="Portfolio">
               {

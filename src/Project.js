@@ -16,16 +16,14 @@ function Project() {
   const project = sites.filter((site) => site.key === projectKey)[0];
 
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
-  function toggleMode() {
-      setIsDesktop(!isDesktop);
-  }
+
   return (
     <div className="project-container">
-      <Link to="/projects" className="back"><FontAwesomeIcon icon={icon({name: "arrow-left"})} />Back</Link>
-      <ProgressiveImage src={isDesktop ? project.desktopImageFull : !isDesktop ? project.mobileImageFull: null} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : !isDesktop ? project.mobileImagePh: null} >
+      <Link to="/projects" className="back" draggable="false"><FontAwesomeIcon icon={icon({name: "arrow-left"})} />Back</Link>
+      <ProgressiveImage src={isDesktop ? project.desktopImageFull : project.mobileImageFull} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : project.mobileImagePh} >
           {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
       </ProgressiveImage>      
-      <div style={{display: "flex", alignItems: "baseline"}}><h1>{project.title}</h1> <a href={project.link} target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit</a></div>
+      <div style={{display: "flex", alignItems: "baseline"}}><h1>{project.title}</h1> <a href={project.link} className="forward" draggable="false" target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit <FontAwesomeIcon icon={icon({name: "arrow-right"})} /></a></div>
       <p>{project.longDescription}</p>
       <h2>I worked on:</h2>
       <ul>

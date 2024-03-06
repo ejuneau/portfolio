@@ -1,7 +1,7 @@
 export default function Hamburger(props) {
     return(
         <>
-        <div className="hamburger">
+        <div className="hamburger" onClick={(props.toggleHamburger)}>
             <div className="burger burger1" />
             <div className="burger burger2" />
             <div className="burger burger3" />
