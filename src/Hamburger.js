@@ -32,6 +32,14 @@ export default function Hamburger(props) {
                 .hamburger{
                     display: flex;
                 }
+                .project-cover {
+                    width: 90vw;
+                    padding: 0 5vw;
+                }
+                .project-showreel {
+                    top: 10vh;
+                    pointer-events: all;
+                }
                 header nav {
                     display: flex;
                     visibility: ${props.hamburgerOpen? 'visible' : 'hidden'};

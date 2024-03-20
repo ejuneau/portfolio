@@ -20,10 +20,25 @@ function Project() {
   return (
     <div className="project-container">
       <Link to="/projects" className="back" draggable="false"><FontAwesomeIcon icon={icon({name: "arrow-left"})} />Back</Link>
-      <ProgressiveImage src={isDesktop ? project.desktopImageFull : project.mobileImageFull} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : project.mobileImagePh} >
-          {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
-      </ProgressiveImage>      
-      <div style={{display: "flex", alignItems: "baseline"}}><h1>{project.title}</h1> <a href={project.link} className="forward" draggable="false" target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit <FontAwesomeIcon icon={icon({name: "arrow-right"})} /></a></div>
+      {      
+      project.showreel?
+      <div className="showreel-container">
+      <iframe 
+      style={{position: "fixed", left: "20vw", right: "20vw", width: "60vw", height: "calc(60vw * 9 / 16", zIndex: 1}}
+      className="project-showreel"
+      src={`https://www.youtube.com/embed/${project.showreel}?si=0m8vX-NLCK86YRHs&controls=0&loop=1&autoplay=1&showinfo=0&playlist=${project.showreel}`} 
+      title={`${project.title} Showreel`} 
+      frameborder="0"  
+      >
+        
+      </iframe>
+      </div>:
+        <ProgressiveImage src={isDesktop ? project.desktopImageFull : project.mobileImageFull} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : project.mobileImagePh} >
+            {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
+        </ProgressiveImage>  
+      }
+      <div className="project-cover">
+      <div style={{display: "flex", alignItems: "baseline", paddingTop: "5vh"}}><h1>{project.title}</h1> <a href={project.link} className="forward" draggable="false" target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit <FontAwesomeIcon icon={icon({name: "arrow-right"})} /></a></div>
       <p>{project.longDescription}</p>
       <h2>I worked on:</h2>
       <ul>
@@ -33,6 +48,7 @@ function Project() {
           )
         })}
       </ul>
+    </div>
     </div>
   );
 }

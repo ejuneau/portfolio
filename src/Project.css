@@ -1,5 +1,5 @@
 .project-container {
-  margin-top: 15vh;
+  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,23 +10,46 @@
 }
 .project-container * {
   color: white;
-  outline: 0px solid red;
 }
 .project-image {
   width: 80%;
   object-fit: contain;
-
 }
 
+.project-cover {
+  z-index: 5;
+  width: 60vw;
+  padding: 0 20vw;
+  background: rgb(12,12,12);
+  background: linear-gradient(0deg, rgba(15,15,15,1) 70%, rgba(15,15,15,0) 100%);
+}
+
+.project-showreel, .project-showreel * {
+  user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+}
+.showreel-container {
+  height: calc(60vw * 9 / 16);
+  width: 60vw;
+  position: relative;
+  margin-bottom: 3em;
+}
+
+.ytp-chrome-top.ytp-show-cards-title, .ytp-paid-content-overlay, .ytp-pause-overlay-container, .ytp-watermark {
+  display: none !important;
+}
 .back svg {
   margin-right: 5px;
   clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
 }
 .back {
-  position: sticky;
-  top: 10vh;
-  margin-bottom: 5vh;
+  /* re-implement this later!*/
+  position: fixed;
+  display: none;
+  left: 10vw;
+  bottom: 10vh;
   align-self: flex-start;
 }
 
