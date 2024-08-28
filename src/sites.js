@@ -94,7 +94,6 @@ const sites = [
                                 "Full website design and development", 
                                 "Website built in React.js and hosted on Render", 
                             ],
-        showreel:           "8HzenvtBKk4",
     },
     {
         color:              "#242F40",
