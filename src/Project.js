@@ -9,6 +9,7 @@ import sites from './sites';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+
 function Project() {
   const { projectKey } = useParams();
 
@@ -33,9 +34,11 @@ function Project() {
         
       </iframe>
       </div>:
-        <ProgressiveImage src={isDesktop ? project.desktopImageFull : project.mobileImageFull} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : project.mobileImagePh} >
-            {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
-        </ProgressiveImage>  
+        <div className="image-container">
+          <ProgressiveImage src={isDesktop ? project.desktopImageFull : project.mobileImageFull} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : project.mobileImagePh} >
+              {(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} className="project-image"/>}
+          </ProgressiveImage>  
+        </div>
       }
       <div className="project-cover">
       <div style={{display: "flex", alignItems: "baseline", paddingTop: "5vh"}}><h1>{project.title}</h1> <a href={project.link} className="forward" draggable="false" target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit <FontAwesomeIcon icon={icon({name: "arrow-right"})} /></a></div>

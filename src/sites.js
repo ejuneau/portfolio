@@ -1,19 +1,30 @@
-import soupgangDesktopFull from './Assets/images/desktop/full/soupgangDesktopFull.png';
-import soupgangDesktopPh from './Assets/images/desktop/ph/soupgangDesktopPh.png';
-import soupgangMobileFull from './Assets/images/mobile/full/soupgangMobileFull.png';
-import soupgangMobilePh from './Assets/images/mobile/ph/soupgangMobilePh.png';
+import soupgangDesktopFull from './Assets/images/desktop/full/soupgang.png';
+import soupgangDesktopPh from './Assets/images/desktop/ph/soupgang.png';
+import soupgangMobileFull from './Assets/images/mobile/full/soupgang.png';
+import soupgangMobilePh from './Assets/images/mobile/ph/soupgang.png';
 
 
-import townsquareDesktopFull from './Assets/images/desktop/full/townsquareDesktopFull.png';
-import townsquareDesktopPh from './Assets/images/desktop/ph/townsquareDesktopPh.png';
-import townsquareMobileFull from './Assets/images/mobile/full/townsquareMobileFull.png';
-import townsquareMobilePh from './Assets/images/mobile/ph/townsquareMobilePh.png';
+import townsquareDesktopFull from './Assets/images/desktop/full/townsquare.png';
+import townsquareDesktopPh from './Assets/images/desktop/ph/townsquare.png';
+import townsquareMobileFull from './Assets/images/mobile/full/townsquare.png';
+import townsquareMobilePh from './Assets/images/mobile/ph/townsquare.png';
 
 
-import spyglassDesktopFull from './Assets/images/desktop/full/spyglassDesktopFull.png';
-import spyglassDesktopPh from './Assets/images/desktop/ph/spyglassDesktopPh.png';
-import spyglassMobileFull from './Assets/images/mobile/full/spyglassMobileFull.png';
-import spyglassMobilePh from './Assets/images/mobile/ph/spyglassMobilePh.png';
+import spyglassDesktopFull from './Assets/images/desktop/full/spyglass.png';
+import spyglassDesktopPh from './Assets/images/desktop/ph/spyglass.png';
+import spyglassMobileFull from './Assets/images/mobile/full/spyglass.png';
+import spyglassMobilePh from './Assets/images/mobile/ph/spyglass.png';
+
+import maxineDesktopFull from './Assets/images/desktop/full/maxine.png';
+import maxineDesktopPh from './Assets/images/desktop/ph/maxine.png';
+import maxineMobileFull from './Assets/images/mobile/full/maxine.png';
+import maxineMobilePh from './Assets/images/mobile/ph/maxine.png';
+
+import reclaimDesktopFull from './Assets/images/desktop/full/reclaim.png';
+import reclaimDesktopPh from './Assets/images/desktop/ph/reclaim.png';
+import reclaimMobileFull from './Assets/images/mobile/full/reclaim.png';
+import reclaimMobilePh from './Assets/images/mobile/ph/reclaim.png';
+
 
 
 
@@ -35,6 +46,23 @@ const sites = [
                             ]
     },
     {
+        color:              "#23726d",
+        key:                "maxine",
+        link:               "https://maxinesophiawolff.me/",
+        title:              "Maxine Sophia Wolff",
+        description:        "Simple responsive portfolio site.",
+        desktopImageFull:   maxineDesktopFull,
+        desktopImagePh:     maxineDesktopPh, 
+        mobileImageFull:    maxineMobileFull,
+        mobileImagePh:      maxineMobilePh,
+        longDescription:    "The portfolio of Maxine Sophia Wolff is a small and responsive Multi-Page Application hosted on Render through a custom domain name. The goal of this project was to streamline and condense the information provided on the client's previous portfolio site, while updating styles to conform with best practises in web design.",
+        involvement:        [
+                                "Full website development", 
+                                "Collaborated with client to establish design",
+                                "Website built in React.js and hosted on Render", 
+                            ],
+    },
+    {
         color:              "#FC5130",
         key:                "spyglass",
         link:               "https://spyglass-hsef.onrender.com/",
@@ -44,7 +72,24 @@ const sites = [
         desktopImagePh:     spyglassDesktopPh, 
         mobileImageFull:    spyglassMobileFull,
         mobileImagePh:      spyglassMobilePh,
-        longDescription:    "Spyglass Eyewear is a portfolio project designed by me. Everything about this project was done by myself, from from designing the layout to hosting the website and even to coordinating the photoshoots for the glasses models. The goal of this project was to design a theoretical webstore with a striking visual design that immediately grabs the client's attention - animations are flashy, colours are bright, everything about the site is meant to dazzle. The off-centre design proved to be a very fun challenge to achieve in CSS, and the final result speaks for itself. The design of this website is heavily inspired by Persona 5, a video game with a similar visual identity.",
+        longDescription:    `Spyglass Eyewear is a portfolio project designed by me. Everything about this project was done by myself, from from designing the layout to hosting the website and even to coordinating the photoshoots for the glasses models. The goal of this project was to design a theoretical webstore with a striking visual design that immediately grabs the client's attention - animations are flashy, colours are bright, everything about the site is meant to dazzle. The off-centre design proved to be a very fun challenge to achieve in CSS, and the final result speaks for itself. The design of this website is heavily inspired by Persona 5, a video game with a similar visual identity.`,
+        involvement:        [
+                                "Full website design and development", 
+                                "Website built in React.js and hosted on Render", 
+                            ],
+        showreel:           "8HzenvtBKk4",
+    },
+    {
+        color:              "#3daeda",
+        key:                "reclaim",
+        link:               "https://spyglass-hsef.onrender.com/",
+        title:              "RECLAIM Literacy",
+        description:        "Nonprofit organisation.",
+        desktopImageFull:   reclaimDesktopFull,
+        desktopImagePh:     reclaimDesktopPh, 
+        mobileImageFull:    reclaimMobileFull,
+        mobileImagePh:      reclaimMobilePh,
+        longDescription:    `Spyglass Eyewear is a portfolio project designed by me. Everything about this project was done by myself, from from designing the layout to hosting the website and even to coordinating the photoshoots for the glasses models. The goal of this project was to design a theoretical webstore with a striking visual design that immediately grabs the client's attention - animations are flashy, colours are bright, everything about the site is meant to dazzle. The off-centre design proved to be a very fun challenge to achieve in CSS, and the final result speaks for itself. The design of this website is heavily inspired by Persona 5, a video game with a similar visual identity.`,
         involvement:        [
                                 "Full website design and development", 
                                 "Website built in React.js and hosted on Render", 

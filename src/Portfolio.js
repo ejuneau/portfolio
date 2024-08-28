@@ -1,19 +1,23 @@
 import './Portfolio.css';
+import 'react-indiana-drag-scroll/dist/style.css';
 import sites from './sites';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
 import PortfolioItem from './PortfolioItem';
+import { ScrollContainer } from 'react-indiana-drag-scroll';
+
 export default function Portfolio() {
 
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
 
-    function toggleMode() {
-        setIsDesktop(!isDesktop);
-    }
+    function toggleMode() { setIsDesktop(!isDesktop) }
     
+    const ref = useRef();
+
+
     return(
         <div className="portfolio">
             <h1>Projects</h1>
@@ -23,16 +27,16 @@ export default function Portfolio() {
                 <FontAwesomeIcon icon={icon({name: "display"})} className="device" style={{opacity: !isDesktop? '0.5' : '1', scale: isDesktop? '1.1' : '0.9'}}/>
             </div>
 
-            <div id="draggable" className="portfolio-list" style={{flexFlow: isDesktop? 'column':'row'}}>
+            <ScrollContainer id="draggable" className="portfolio-list" ref={ref} style={{flexFlow: isDesktop? 'column':'row', cursor: isDesktop?"default":"grab"}}>
             
                     {
                         sites.map(site => {
                             return (
-                                <PortfolioItem site={site} isDesktop={isDesktop} />
+                                <PortfolioItem key={site.name} site={site} isDesktop={isDesktop} />
                             )
                         })
                     }
-            </div>
+            </ScrollContainer>
         </div>
     )
 }
