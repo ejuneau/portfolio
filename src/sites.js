@@ -89,10 +89,10 @@ const sites = [
         desktopImagePh:     reclaimDesktopPh, 
         mobileImageFull:    reclaimMobileFull,
         mobileImagePh:      reclaimMobilePh,
-        longDescription:    `Spyglass Eyewear is a portfolio project designed by me. Everything about this project was done by myself, from from designing the layout to hosting the website and even to coordinating the photoshoots for the glasses models. The goal of this project was to design a theoretical webstore with a striking visual design that immediately grabs the client's attention - animations are flashy, colours are bright, everything about the site is meant to dazzle. The off-centre design proved to be a very fun challenge to achieve in CSS, and the final result speaks for itself. The design of this website is heavily inspired by Persona 5, a video game with a similar visual identity.`,
+        longDescription:    `RECLAIM Literacy is a not-for-profit organisation that offers resources to help address illiteracy rates in Montreal. For such an important cause, their website must convey the services they provide clearly and efficiently. A website overhaul with prioritisation of visual assets was the key to this project's success, and accessibiltiy was a top priority throughout the entire design process.`,
         involvement:        [
                                 "Full website design and development", 
-                                "Website built in React.js and hosted on Render", 
+                                "Website built and designed in Weebly", 
                             ],
     },
     {
