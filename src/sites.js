@@ -42,7 +42,7 @@ const sites = [
         longDescription:    "Townsquare is a local contractor service which aims to provide a number of services to its users across the Greater Montreal Area. From smaller jobs like painting or cleaning, to bigger tasks like patio finishing and arborist services, Townsquare puts a focus on the quality of their employees' work as well as their quick turnaround for tasks.",
         involvement:        [
                                 "Implemented WordPress website", 
-                                "Outlined design danguage", 
+                                "Outlined design language", 
                             ]
     },
     {
