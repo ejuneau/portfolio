@@ -50,7 +50,7 @@ const sites = [
         key:                "maxine",
         link:               "https://maxinesophiawolff.me/",
         title:              "Maxine Sophia Wolff",
-        description:        "Simple responsive portfolio site.",
+        description:        "Simple responsive portfolio.",
         desktopImageFull:   maxineDesktopFull,
         desktopImagePh:     maxineDesktopPh, 
         mobileImageFull:    maxineMobileFull,

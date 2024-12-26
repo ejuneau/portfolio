@@ -4,11 +4,23 @@ header {
     color: #FFF;
     justify-content: space-evenly;
     height: 10vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     transition: background-color 0.2s ease;
     align-items: center;
+    z-index: 30;
 }
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+ 
+    background: rgba(15, 15, 15, 0.3);
+    mask: linear-gradient(to top, transparent, black 50%);
+    backdrop-filter: blur(2px);
+ }
+
  header nav {
     display: flex;
     align-self: center;

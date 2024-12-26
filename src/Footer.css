@@ -6,8 +6,21 @@
     position: relative;
     bottom: 0;
     height: 10vh;
-    transition: background-color 0.2s ease
+    transition: background-color 0.2s ease;
+    overflow: hidden;
 }
+
+.Footer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+ 
+    background: rgba(15, 15, 15, 0.3);
+    mask: linear-gradient(to bottom, transparent, black 50%);
+    backdrop-filter: blur(2px);
+ }
+
 .Footer .disclaimer {
     font-size: 0.8rem;
     text-align: center;

@@ -32,7 +32,7 @@ const { site, isDesktop } = props;
 				// isDesktop false && innerWidth > 767
 				"20vw":
 				// isDesktop false && innerWidth <= 767
-				"70vw"),
+				"100vw"),
 
 			height: isDesktop? 
 			// isDesktop true
@@ -45,12 +45,14 @@ const { site, isDesktop } = props;
 				//'isDesktop false && innerWidth > 767
 				"calc(20vw * 926 / 428)":
 				// isDesktop false && innerWidth <= 767
-				"calc(70vw * 926 / 428)")}}>
+				"calc(70vw * 926 / 428)")
+				
+				}}>
 
-				<div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", height: "100%"}}>    
+				<div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>    
 					<h3>{site.title}</h3>
-					<p style={{margin: "1.5em 0"}}>{site.description}</p>
-					<div style={{display: "flex", width: "80%", justifyContent: "center"}}>
+					<p style={{margin: "1.5em 0", width: "100%"}}>{site.description}</p>
+					<div style={{display: "flex", width: "100%", justifyContent: "center"}}>
 						<a style={{color: "white", marginRight: "1em"}} draggable="false" href={site.link} rel="noreferrer" target="_blank">Visit</a>
 						<Link style={{color: "white", marginLeft: "1em"}} draggable="false" to={site.key}>Learn More</Link>
 					</div>

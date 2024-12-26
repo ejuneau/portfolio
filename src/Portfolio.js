@@ -1,7 +1,7 @@
 import './Portfolio.css';
 import 'react-indiana-drag-scroll/dist/style.css';
 import sites from './sites';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
@@ -9,8 +9,23 @@ import PortfolioItem from './PortfolioItem';
 import { ScrollContainer } from 'react-indiana-drag-scroll';
 
 export default function Portfolio() {
+    
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.scrollY;
+        setScrollPosition(position)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
 
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
 
+    useEffect(() => {
+        console.log(scrollPosition);
+    })
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
 
     function toggleMode() { setIsDesktop(!isDesktop) }
@@ -32,7 +47,7 @@ export default function Portfolio() {
                     {
                         sites.map(site => {
                             return (
-                                <PortfolioItem key={site.name} site={site} isDesktop={isDesktop} />
+                                <PortfolioItem key={site.key} site={site} isDesktop={isDesktop} />
                             )
                         })
                     }
