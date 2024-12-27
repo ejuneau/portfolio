@@ -58,8 +58,14 @@ a.About {
   .links-button-container {
     flex-direction: column;
   }
-  .AlbumShowcaseContainer .music-button {
-    margin-top: 0.9em;
-  }
+  .AlbumShowcaseContainer {
+    .music-button {
+        margin-top: 0.9em;
+    };
+    .available-here {
+        margin-bottom: 0;
+        margin-top: 0.9em;
+    }
+}
 }
 

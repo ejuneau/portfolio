@@ -20,7 +20,7 @@ function AlbumShowcase() {
       <h1 className="Title-Artist" style={{marginTop: 0, fontSize: "1.5em"}}>{`${TESTALBUM.artist}`}</h1>
 
       <img src={TESTALBUM.album} alt={`"${TESTALBUM.title}" by ${TESTALBUM.artist} album cover`} />
-       <p style={{marginBottom: 0, marginTop: "0.9em"}}>Available to listen here:</p>
+       <p className="available-here" >Available to listen here:</p>
        <div className="links-button-container" style={{display: "flex"}}>
           <div className="music-button">
             <a href={TESTALBUM.bandcampLink} target="_blank">
