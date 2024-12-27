@@ -21,7 +21,7 @@ export default function Hamburger(props) {
                 width: 2rem;
                 height: 0.25rem;
                 border-radius: 10px;
-                background-color: white;
+                background-color: var(--text-color);
                 transform-origin: 1px;
                 transition: all 0.2s ease-in-out;
             }
@@ -44,7 +44,7 @@ export default function Hamburger(props) {
                     display: flex;
                     visibility: ${props.hamburgerOpen? 'visible' : 'hidden'};
                     opacity: ${props.hamburgerOpen? '1' : '0'};
-                    background-color: #0F0F0F;
+                    background-color: var(--background-color);
                     top: 0;
                     height: 100vh;
                     width: 100vw;

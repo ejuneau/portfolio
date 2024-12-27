@@ -8,7 +8,6 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
 import PortfolioItem from './PortfolioItem';
 import PortfolioItemGame from './PortfolioItemGame';
-import { ScrollContainer } from 'react-indiana-drag-scroll';
 
 export default function Portfolio() {
     
@@ -25,9 +24,6 @@ export default function Portfolio() {
         }
     }, []);
 
-    useEffect(() => {
-        console.log(scrollPosition);
-    })
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
 
     function toggleMode() { setIsDesktop(!isDesktop) }
@@ -41,7 +37,8 @@ export default function Portfolio() {
             <h2>Web</h2>
             <div className="mode-toggle" onClick={toggleMode}>
                 <FontAwesomeIcon icon={icon({name: "mobile"})} className="device" style={{opacity: isDesktop? '0.5' : '1', scale: isDesktop ? '0.9' : '1.1'}} />
-                <Arrows className={`arrows ${isDesktop?'desktop':'mobile'}`}/>
+                {/* <Arrows className={`arrows ${isDesktop?'desktop':'mobile'}`}/> */}
+                <FontAwesomeIcon icon={icon({name: 'arrows-rotate'})} className={`arrows ${isDesktop?'desktop':'mobile'}`} />
                 <FontAwesomeIcon icon={icon({name: "display"})} className="device" style={{opacity: !isDesktop? '0.5' : '1', scale: isDesktop? '1.1' : '0.9'}}/>
             </div>
 

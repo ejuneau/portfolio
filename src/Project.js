@@ -43,16 +43,20 @@ function Project() {
         </div>
       }
       <div className="project-cover">
-      <div style={{display: "flex", alignItems: "baseline", paddingTop: "5vh"}}><h1>{project.title}</h1> <a href={project.link} className="forward" draggable="false" target="_blank" rel="noreferrer" style={{marginLeft: "1em"}}>Visit <FontAwesomeIcon icon={icon({name: "arrow-right"})} /></a></div>
-      <p>{project.longDescription}</p>
-      <h2>I worked on:</h2>
-      <ul>
-        {project.involvement.map((task) => {
-          return (
-          <li>{task}</li>
-          )
-        })}
-      </ul>
+        <a href={project.link} draggable="false" target="_blank" rel="noreferrer" style={{display: "flex", alignItems: "baseline", paddingTop: "5vh"}}>
+          <h1>{project.title}</h1> 
+          <FontAwesomeIcon className="forward-icon" icon={icon({name: "arrow-up-right-from-square", size: "2xs"})} style={{marginLeft: "0.5em"}} />
+          <p style={{marginLeft: "0.5em", marginRight: '1em'}}>Visit</p>
+        </a>
+        <p>{project.longDescription}</p>
+        <h2>I worked on:</h2>
+        <ul>
+          {project.involvement.map((task) => {
+            return (
+            <li>{task}</li>
+            )
+          })}
+        </ul>
     </div>
     </div>
   );

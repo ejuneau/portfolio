@@ -53,8 +53,8 @@ const { game } = props;
 					<h3>{game.title}</h3>
 					<p style={{margin: "1.5em 0", width: "100%"}}>{game.description}</p>
 					<div style={{display: "flex", width: "100%", justifyContent: "center"}}>
-						<a style={{color: "white", marginRight: "1em"}} draggable="false" href={game.link} rel="noreferrer" target="_blank">Visit</a>
-						<Link style={{color: "white", marginLeft: "1em"}} draggable="false" to={game.key}>Learn More</Link>
+						<a style={{color: "var(--text-color)", marginRight: "1em"}} draggable="false" href={game.link} rel="noreferrer" target="_blank">Visit</a>
+						<Link style={{color: "var(--text-color)", marginLeft: "1em"}} draggable="false" to={game.key}>Learn More</Link>
 					</div>
 				</div>
 

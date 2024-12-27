@@ -5,11 +5,11 @@
   align-items: center;
 }
 .App {
-  color: white;
+  color: var(--text-color);;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transition: background-color 0.2s ease;
+  /* transition: background-color 0.2s ease; */
   flex-direction: column;
   margin-top: 10vh;
   width: clamp(40%, 300px, 80%);
@@ -23,14 +23,34 @@
   padding: 0.6vh 0;
   margin: 0.8em 0;
 }
-.list-item a {
+.list-item {
   text-decoration: underline;
-  color: white;
-  text-decoration-color:#0F0F0F;
+  -webkit-text-decoration: underline;
+  color: transparent;
+  text-decoration-thickness: 0.15rem;
+  text-underline-offset: 5px;
+}
+.list-item a {
+  color: var(--text-color);
   font-size: 3rem;
+  text-decoration: none;
+  }
+.emoji-wave {
+  animation-name: wave;
+  animation-delay: 1.5s;
+  animation-duration: 1.5s;
+  margin-right: 0.2em;
+}
+@keyframes wave {
+  0% {rotate: 0deg;}
+  50% {rotate: -30deg;}
+  55% {rotate: -28deg}
+  88% {rotate: 5deg}
+  99% {rotate: -1deg}
+  100% {rotate: 0deg;}
 }
 .App a {
-  color: white;
+  color: var(--text-color);
 }
 .App h2, .App p {
   text-align: center;
@@ -40,7 +60,7 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
-.portfolio, .contact, .Portfolio, .About, .Project, .project-container, .desktop-portfolio-item, .mobile-portfolio-item {
+.portfolio, .contact, .Portfolio, .About, .Project, .project-container, .desktop-portfolio-item, .mobile-portfolio-item, .App, #recaptcha {
   animation-name: fadein;
   animation-duration: 0.5s;
 }
@@ -50,12 +70,11 @@
   width: 100%;
   justify-content: center;
   a {
-    color: white;
+    color: var(--text-color);;
     text-align: center;
   }
   img {
     border-radius: 50%;
-    opacity: 0.7;
     width: 100%;
   }
   .left-column {
@@ -67,7 +86,8 @@
     text-align: right;
     h1 {
       text-align: right;
-      margin: 0;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
   .right-column {

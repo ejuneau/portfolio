@@ -2,8 +2,12 @@ import './Header.css';
 import Hamburger from './Hamburger';
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import Logo from './Logo';
-function Header() {
+function Header(props) {
+
+  const {isDarkMode, toggleDarkMode} = props
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const toggleHamburger = () => {
     window.innerWidth < 767 && setHamburgerOpen(!hamburgerOpen);
@@ -13,7 +17,7 @@ function Header() {
   }
 
   return (
-    <header>
+   <header>
         <Link to="/" className="logo-container"><Logo /></Link>
       <nav>
         <li><NavLink  draggable="false" 
@@ -35,9 +39,15 @@ function Header() {
         className={({ isActive, isPending, isTransitioning }) => [ isPending ? "pending" : "", isActive ? "active-link" : "", isTransitioning ? "transitioning" : "", ].join(" ")}
         to="/contact"
         onClick={closeHamburger}>Contact</NavLink></li>
+
+        <li>
+          { isDarkMode?
+          <FontAwesomeIcon icon={icon({name: "sun"})} className="dark-mode-switch sun" onClick={toggleDarkMode}/>:
+          <FontAwesomeIcon icon={icon({name: "moon"})} className="dark-mode-switch moon" onClick={toggleDarkMode} />}
+        </li>
       </nav>
 
-        <Hamburger draggable="false" hamburgerOpen={hamburgerOpen} toggleHamburger={toggleHamburger}/>
+        <Hamburger draggable="false" hamburgerOpen={hamburgerOpen} toggleHamburger={toggleHamburger} />
 
     </header>
   );

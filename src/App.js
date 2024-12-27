@@ -9,20 +9,62 @@ import NotFound from './NotFound.js';
 import Contact from './Pages/Contact/Contact';
 import { createBrowserRouter, ScrollRestoration } from 'react-router-dom';
 import { Outlet, RouterProvider } from 'react-router';
-
+import { useState, useEffect } from 'react';
 
 
 function App() {
-  const offBlack ="#0F0F0F"
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
+    const setLightMode = () => document.documentElement.style.cssText = "--background-color: var(--off-white); --text-color: var(--off-black); --image-opacity: var(--light-mode-opacity)";
+    const setDarkMode  = () => document.documentElement.style.cssText = "--background-color: var(--off-black); --text-color: var(--off-white); --image-opacity: var(--dark-mode-opacity)";
+
+
+    const toggleDarkMode = () => {
+      //store the CURRENT OPPOSITE of isDarkMode in localstorage
+      localStorage.setItem("isDarkMode", JSON.stringify(!isDarkMode))
+      //invert the CURRENT VALUE of isDarkMode
+      setIsDarkMode(!isDarkMode)
+      // if (JSON.parse(localStorage.getItem("isDarkMode"))) {
+      //   setDarkMode()
+      // } else {
+      //   setLightMode();
+
+      // }
+    
+    }
+
+    // Defaults to light mode, eventually will read from user preference
+    useEffect(() => {
+        console.log(JSON.parse(localStorage.getItem("isDarkMode")))
+
+        if (JSON.parse(localStorage.getItem("isDarkMode"))) { setDarkMode() } 
+        else { setLightMode() }
+      
+    },[])
+    useEffect(() => {
+      console.log(JSON.parse(localStorage.getItem("isDarkMode")))
+
+      if (JSON.parse(localStorage.getItem("isDarkMode"))) { setDarkMode() } 
+      else { setLightMode() }
+    
+  },[isDarkMode])
+    // useEffect(() => {
+    //   if (localStorage.getItem("isDarkMode")) {
+    //     document.documentElement.style.cssText = "--background-color: var(--off-black); --text-color: var(--off-white); --image-opacity: var(--dark-mode-opacity)";
+    //   } else {
+    //     document.documentElement.style.cssText = "--background-color: var(--off-white); --text-color: var(--off-black); --image-opacity: var(--light-mode-opacity)";
+
+    //   }
+    // })
+  const offBlack="#0F0F0F";
   function Page() {
 
     return(
       <>
-      <Header />
-      <ScrollRestoration />
-      <Outlet />
-      <Footer />
+        <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <ScrollRestoration />
+        <Outlet />
+        <Footer />
       </>
     )
   }

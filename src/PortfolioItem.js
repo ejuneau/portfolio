@@ -67,8 +67,8 @@ const { site, isDesktop } = props;
 					<h3>{site.title}</h3>
 					<p style={{margin: "1.5em 0", width: "100%"}}>{site.description}</p>
 					<div style={{display: "flex", width: "100%", justifyContent: "center", flexDirection: isDesktop ? "row":"column"}}>
-						<a style={{color: "white", marginRight: isDesktop?"1em":"0em", marginBottom: isDesktop?"0em":"1em"}} draggable="false" href={site.link} rel="noreferrer" target="_blank">Visit</a>
-						<Link style={{color: "white", marginLeft: isDesktop?"1em":"0em", marginTop: isDesktop?"0em":"1em"}} draggable="false" to={site.key}>Learn More</Link>
+						<a style={{color: "var(--text-color)", marginRight: isDesktop?"1em":"0em", marginBottom: isDesktop?"0em":"1em"}} draggable="false" href={site.link} rel="noreferrer" target="_blank">Visit</a>
+						<Link style={{color: "var(--text-color)", marginLeft: isDesktop?"1em":"0em", marginTop: isDesktop?"0em":"1em"}} draggable="false" to={site.key}>Learn More</Link>
 					</div>
 				</div>
 

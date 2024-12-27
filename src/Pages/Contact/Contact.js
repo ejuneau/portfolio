@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="contact">
                 <h1>Contact</h1>
                 {/* <p className="Contact">Click <a href="mailto:rcjuneau8@gmail.com?subject=Reaching out from your Portfolio site" rel="noreferrer" target="_blank" style={{color: 'white'}}>here</a> to send me an email (mailto)</p> */}
-                <p className="Contact">You're welcome to follow me on <a href="https://bsky.app/profile/ejuneau.me" rel="noreferrer" target="_blank" style={{color: 'white'}}>BlueSky</a>, connect with me on <a href="https://linkedin.com/in/e-juneau/" rel="noreferrer" target="_blank" style={{color: 'white'}}>LinkedIn</a>, or you can send me an email via the form below:</p>
+                <p className="Contact">You're welcome to follow me on <a href="https://bsky.app/profile/ejuneau.me" rel="noreferrer" target="_blank" style={{color: 'var(--text-color)'}}>BlueSky</a>, connect with me on <a href="https://linkedin.com/in/e-juneau/" rel="noreferrer" target="_blank" style={{color: 'var(--text-color)'}}>LinkedIn</a>, or you can send me an email via the form below:</p>
 
                 <form onSubmit={onSubmit} className="contact-form">
                  <input
@@ -111,7 +111,7 @@ export default function Contact() {
                      value={toSend.message}
                      onChange={handleChange}
                  />
-                  <ReCAPTCHA ref={refCaptcha} required sitekey={process.env.REACT_APP_SITE_KEY} onChange={sendEmail}/>
+                  <ReCAPTCHA id="recaptcha" ref={refCaptcha} required sitekey={process.env.REACT_APP_SITE_KEY} onChange={sendEmail}/>
                  <button key="submit" id="submit" type='submit' >Send</button>
 
                 

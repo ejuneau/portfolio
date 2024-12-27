@@ -1,19 +1,20 @@
 header {
     display: flex;
     width: 100%;
-    color: #FFF;
+    color: var(--text-color);;
     justify-content: space-evenly;
     height: 10vh;
     position: fixed;
     top: 0;
-    transition: background-color 0.2s ease;
     align-items: center;
     z-index: 30;
 }
 
 header nav li a, header h1 a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
+    filter: drop-shadow(0.05em 0.05em 0.5em var(--background-color));  
+
 } 
 
 header::after {
@@ -21,10 +22,13 @@ header::after {
     position: absolute;
     inset: 0;
     z-index: -1;
- 
-    background: rgba(15, 15, 15, 0.3);
-    mask: linear-gradient(to top, transparent, black 50%);
+    background: var(--background-color);
+    opacity: 0.9;
+    mask: linear-gradient(to top, transparent, var(--background-color) 20%);
+
+    fill: linear-gradient(to top, transparent, var(--background-color) 20%);
     backdrop-filter: blur(2px);
+    transition: background-color 0.2s ease-in-out;
  }
 
  header nav {
@@ -37,14 +41,25 @@ header nav li {
     list-style-type: none;
     padding: 0 1em;
     text-decoration: underline;
-    text-decoration-color: rgba(0,0,0,0);
+    color: transparent;
+}
+header nav li a {
+    color: var(--text-color);
 }
 header nav li:hover {
-    text-decoration-color: rgb(255, 255, 255);
+    color: var(--text-color);
 }
 .active-link {
     text-decoration: underline;
-    text-decoration-color: white;
+    color: var(--text-color);
+}
+
+.dark-mode-switch {
+    color: var(--text-color);
+    cursor: pointer;
+    width: 1.2em;
+    scale: 1.2;
+
 }
 
 header h1 a {
@@ -74,7 +89,7 @@ header h1 a {
     font-family: 'Libre Bodoni';
     font-size: 2rem;
     scale: 1;
-    color: white;
+    color: var(--text-color);;
 }
 .logo-text-container {
     height: 10vh;
