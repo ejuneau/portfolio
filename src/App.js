@@ -1,12 +1,12 @@
 import './App.css';
-import Home from './Home';
+import Home from './Pages/Home/Home';
 import Header from './Header';
 import Footer from './Footer';
 import Portfolio from './Portfolio';
-import About from './About';
+import About from './Pages/About/About';
 import Project from './Project';
 import NotFound from './NotFound.js';
-import Contact from './Contact';
+import Contact from './Pages/Contact/Contact';
 import { createBrowserRouter, ScrollRestoration } from 'react-router-dom';
 import { Outlet, RouterProvider } from 'react-router';
 

@@ -10,6 +10,12 @@ header {
     align-items: center;
     z-index: 30;
 }
+
+header nav li a, header h1 a {
+    color: white;
+    text-decoration: none;
+} 
+
 header::after {
     content: "";
     position: absolute;
@@ -34,17 +40,12 @@ header nav li {
     text-decoration-color: rgba(0,0,0,0);
 }
 header nav li:hover {
-    text-decoration-color: #FFFFFF;
+    text-decoration-color: rgb(255, 255, 255);
 }
 .active-link {
     text-decoration: underline;
     text-decoration-color: white;
 }
-
-header nav li a, header h1 a {
-    color: white;
-    text-decoration: none;
-} 
 
 header h1 a {
     align-self: center;
@@ -54,22 +55,28 @@ header h1 a {
 #about {
     cursor:pointer;
 } 
+.logo-container {
+    height: 10vh;
+    width: 185px;
+    margin-left: 1em;
 
+}
 .logo {
     position: absolute;
     top: 0;
+    height: 100%;
+    margin-left: 1em;
+
 }
 .logo * {
     display:flex;
     align-items: center;
     font-family: 'Libre Bodoni';
-    font-size: 1em;
-    scale: 1.1;
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 2rem;
+    scale: 1;
+    color: white;
 }
 .logo-text-container {
-    margin: 0;
     height: 10vh;
 
 }
@@ -77,13 +84,21 @@ header h1 a {
     z-index: 3
 }
 .logo-hide-uneau, .logo-hide-ve {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
+    position: relative;
     opacity: 0;
     z-index: 1;
 }
 
-.logo:hover {
-    margin-left: -1em;
+.logo-container {
+    margin-left: 0em;
+}
+
+.logo-container:hover {
+    .logo {
+        margin-left: 0;
+    }
+
     * {
         scale: 1;
     }
@@ -97,12 +112,13 @@ header h1 a {
         margin-right: 0;
     }
     .initial-j {
-        margin-left: 0;
+        margin-left: 0rem;
     }
+
 
 }
 .initial-e {
-    margin-right: -0.55em;
+    margin-right: -0.65em;
 }
 .initial-j {
     margin-left: -0.7em;
@@ -115,7 +131,7 @@ header h1 a {
         justify-content: space-between;
     }
     .logo {
-        left:2em;
+        left: 2em;
     }
     .hamburger {
         position: absolute;
@@ -124,6 +140,7 @@ header h1 a {
     }
 
 }
+
 
 /* @keyframes mouseonclip {
     0% {
@@ -155,13 +172,5 @@ header h1 a {
     }
     100% {
         opacity: 0;
-    }
-}
-@media(max-width: 767px) {
-    .initial-e {
-        margin-right: -0.70em;
-    }
-    .initial-j {
-        margin-left: -0.8em;
     }
 }

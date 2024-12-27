@@ -12,6 +12,7 @@
 }
 h1, h2, h3, h4, h5, h6 {
   font-family:'Libre Bodoni', Times, serif;
+  font-weight: 400;
 }
 p {
   font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -22,36 +23,3 @@ html {
   background-color: #0F0F0F;
 }
 
-.App {
-  color: white;
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.2s ease
-}
-.App .Portfolio {
-  padding-left: 0;
-}
-.App .Portfolio li {
-  list-style-type: none;
-  text-align: center;
-  padding: 0.5vh 0;
-}
-.list-item a {
-  text-decoration: none;
-  color: white;
-  font-size: 4rem;
-}
-.list-item a:hover {
-  font-size: 5rem;
-}
-
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-.portfolio, .contact, .Portfolio, .About, .Project, .project-container, .desktop-portfolio-item, .mobile-portfolio-item {
-  animation-name: fadein;
-  animation-duration: 0.5s;
-}

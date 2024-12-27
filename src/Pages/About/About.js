@@ -4,7 +4,7 @@ import './About.css';
 function About() {
   return (
     <div className="AboutContainer">
-      <h1 className="About" style={{marginTop: '5rem'}}>About me</h1>
+      <h1 className="About">About me</h1>
       <p className="About">My name is Eve Juneau (they/she), a developer based in Montreal, 
       Canada. Specializing in web design via React and game development in Godot, I'm passionate about creating user experiences 
       that stick with people.</p>

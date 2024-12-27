@@ -3,9 +3,10 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 90vh;
+    justify-content: flex-start;
+    height: 80vh;
     width: 100vw;
+    margin-top: 10vh;
 }
 .About {
     align-self: center;

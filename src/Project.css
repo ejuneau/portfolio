@@ -74,4 +74,20 @@
     margin-top: 0vh;
     width: 90vw;
   }
+
+ .showreel-container > iframe {
+    width: 100vw !important; 
+    height: calc(100vw * 9 / 16) !important;
+    margin-left: -20vw;
+  }
+
+  .image-container {
+    width: 100vw;
+    height: calc(100vw * 9 / 16);
+  }
+  .project-image {
+    width: 100vw;
+    height: calc(100vw * 9 / 16);
+
+  }
 }

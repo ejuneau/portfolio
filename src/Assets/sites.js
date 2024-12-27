@@ -1,29 +1,29 @@
-import soupgangDesktopFull from './Assets/images/desktop/full/soupgang.png';
-import soupgangDesktopPh from './Assets/images/desktop/ph/soupgang.png';
-import soupgangMobileFull from './Assets/images/mobile/full/soupgang.png';
-import soupgangMobilePh from './Assets/images/mobile/ph/soupgang.png';
+import soupgangDesktopFull from './images/desktop/full/soupgang.png';
+import soupgangDesktopPh from './images/desktop/ph/soupgang.png';
+import soupgangMobileFull from './images/mobile/full/soupgang.png';
+import soupgangMobilePh from './images/mobile/ph/soupgang.png';
 
 
-import townsquareDesktopFull from './Assets/images/desktop/full/townsquare.png';
-import townsquareDesktopPh from './Assets/images/desktop/ph/townsquare.png';
-import townsquareMobileFull from './Assets/images/mobile/full/townsquare.png';
-import townsquareMobilePh from './Assets/images/mobile/ph/townsquare.png';
+import townsquareDesktopFull from './images/desktop/full/townsquare.png';
+import townsquareDesktopPh from './images/desktop/ph/townsquare.png';
+import townsquareMobileFull from './images/mobile/full/townsquare.png';
+import townsquareMobilePh from './images/mobile/ph/townsquare.png';
 
 
-import spyglassDesktopFull from './Assets/images/desktop/full/spyglass.png';
-import spyglassDesktopPh from './Assets/images/desktop/ph/spyglass.png';
-import spyglassMobileFull from './Assets/images/mobile/full/spyglass.png';
-import spyglassMobilePh from './Assets/images/mobile/ph/spyglass.png';
+import spyglassDesktopFull from './images/desktop/full/spyglass.png';
+import spyglassDesktopPh from './images/desktop/ph/spyglass.png';
+import spyglassMobileFull from './images/mobile/full/spyglass.png';
+import spyglassMobilePh from './images/mobile/ph/spyglass.png';
 
-import maxineDesktopFull from './Assets/images/desktop/full/maxine.png';
-import maxineDesktopPh from './Assets/images/desktop/ph/maxine.png';
-import maxineMobileFull from './Assets/images/mobile/full/maxine.png';
-import maxineMobilePh from './Assets/images/mobile/ph/maxine.png';
+import maxineDesktopFull from './images/desktop/full/maxine.png';
+import maxineDesktopPh from './images/desktop/ph/maxine.png';
+import maxineMobileFull from './images/mobile/full/maxine.png';
+import maxineMobilePh from './images/mobile/ph/maxine.png';
 
-import reclaimDesktopFull from './Assets/images/desktop/full/reclaim.png';
-import reclaimDesktopPh from './Assets/images/desktop/ph/reclaim.png';
-import reclaimMobileFull from './Assets/images/mobile/full/reclaim.png';
-import reclaimMobilePh from './Assets/images/mobile/ph/reclaim.png';
+import reclaimDesktopFull from './images/desktop/full/reclaim.png';
+import reclaimDesktopPh from './images/desktop/ph/reclaim.png';
+import reclaimMobileFull from './images/mobile/full/reclaim.png';
+import reclaimMobilePh from './images/mobile/ph/reclaim.png';
 
 
 
@@ -46,7 +46,7 @@ const sites = [
                             ]
     },
     {
-        color:              "#23726d",
+        color:              "#254e70",
         key:                "maxine",
         link:               "https://maxinesophiawolff.me/",
         title:              "Maxine Sophia Wolff",

@@ -5,7 +5,8 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 
 import { useParams } from 'react-router-dom';
-import sites from './sites';
+import sites from './Assets/sites';
+import games from './Assets/games';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -14,9 +15,10 @@ function Project() {
   const { projectKey } = useParams();
 
   //retrieve project object with key matching params
-  const project = sites.filter((site) => site.key === projectKey)[0];
+  const project = sites.filter((site) => site.key === projectKey)[0] || games.filter((game) => game.key === projectKey)[0];
 
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
+  // const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
+  const isDesktop = useState(window.innerWidth >= 767 ? true : false);
 
   return (
     <div className="project-container">
@@ -27,7 +29,7 @@ function Project() {
       <iframe 
       style={{position: "fixed", left: "20vw", right: "20vw", width: "60vw", height: "calc(60vw * 9 / 16", zIndex: 1}}
       className="project-showreel"
-      src={`https://www.youtube.com/embed/${project.showreel}?si=0m8vX-NLCK86YRHs&controls=0&loop=1&autoplay=1&showinfo=0&playlist=${project.showreel}`} 
+      src={`https://www.youtube.com/embed/${project.showreel}?si=0m8vX-NLCK86YRHs&controls=0&loop=1&mute=1&autoplay=1&showinfo=0&playlist=${project.showreel}`} 
       title={`${project.title} Showreel`} 
       frameborder="0"  
       >

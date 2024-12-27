@@ -9,10 +9,10 @@
 }
 .portfolio-list {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    overflow: auto;
     width: 100vw;
-    justify-content: space-evenly;
-    flex-wrap:wrap;
+    justify-content: flex-start;
 }
 
 .portfolio-item-container {
@@ -25,7 +25,7 @@
     text-align: center;
 }
 .portfolio-item {
-    margin: 3rem 2rem;
+    margin: 3rem 5rem;
     filter: blur(0px);
     position: relative;
     display: flex;
@@ -157,7 +157,7 @@
         filter: blur(30px);
         opacity: 0.3;
     }
-    .portfolio-item:hover p, .portfolio-item:hover h3, .portfolio-item:hover a, .undisclosed-games p, .undisclosed-games h3 {
+    .portfolio-item:hover p, .portfolio-item:hover h3, .portfolio-item:hover a {
         opacity: 1;
         scale: 1;
         filter: blur(0px);
@@ -195,9 +195,6 @@
         scale: 90%;
         filter: blur(30px);
         opacity: 0.3;
-    }
-    .undisclosed-games > div {
-        width: 100%;
     }
 }
 

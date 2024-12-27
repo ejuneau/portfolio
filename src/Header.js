@@ -1,7 +1,7 @@
 import './Header.css';
 import Hamburger from './Hamburger';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Logo from './Logo';
 function Header() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header>
-        <h1><NavLink to="/" ><Logo /></NavLink></h1>
+        <Link to="/" className="logo-container"><Logo /></Link>
       <nav>
         <li><NavLink  draggable="false" 
         className={({ isActive, isPending, isTransitioning }) => [isPending ? "pending" : "", isActive ? "active-link" : "", isTransitioning ? "transitioning" : "",].join(" ")}
