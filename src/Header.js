@@ -7,7 +7,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import Logo from './Logo';
 function Header(props) {
 
-  const {isDarkMode, toggleDarkMode} = props
+  const {toggleDarkMode} = props
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const toggleHamburger = () => {
     window.innerWidth < 767 && setHamburgerOpen(!hamburgerOpen);
@@ -41,7 +41,7 @@ function Header(props) {
         onClick={closeHamburger}>Contact</NavLink></li>
 
         <li>
-          { isDarkMode?
+          { JSON.parse(localStorage.getItem("isDarkMode"))?
           <FontAwesomeIcon icon={icon({name: "sun"})} className="dark-mode-switch sun" onClick={toggleDarkMode}/>:
           <FontAwesomeIcon icon={icon({name: "moon"})} className="dark-mode-switch moon" onClick={toggleDarkMode} />}
         </li>

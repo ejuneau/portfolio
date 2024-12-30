@@ -13,58 +13,35 @@ export default function Contact() {
             message: '',
             reply_to: '',
           });
-  const [ReCaptchaValue, setReCaptchaValue] = useState(null)
-  const handleReCaptchaChange = (captchaValue) => {
-    setReCaptchaValue(captchaValue)
-  }
-        
-          const sendEmail = (captchaValue) => {
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+          const handleCaptchaChange = (captchaValue) => {
+            setCaptchaValue(captchaValue)
+          }
+          const onSubmit = (e) => {
+            e.preventDefault();
+
             const params = {
               ...toSend,
               'g-recaptcha-response': captchaValue
             }
-          
-            send(
-              'service_4tgx1gt',
-              'template_d4y68hq',
-              params,
-              '3p82pPQGGw838DKuu'
-            )
-            .then((response) => {
-              console.log('SUCCESS!', response.status, response.text);
-              window.alert("Your message has been sent. Thank you for your feedback!")
-              // disable form
-              document.getElementById("your_name").disabled = true;
-              document.getElementById("your_email").disabled = true;
-              document.getElementById("message").disabled = true;
-              document.getElementById("submit").disabled = true;
-              document.getElementById("myText").disabled = true;
-            })
-            .catch((err) => {
-              console.log('FAILED...', err);
-            });
-          }
 
-          const onSubmit = (e) => {
-            e.preventDefault();
-
-            const token = ReCaptchaValue; 
-
-            const params = {
-              ...toSend,
-              'g-recapthca-response': token,
-            }
             send(
               'service_4tgx1gt',
               'template_d4y68hq',
               params,
               '3p82pPQGGw838DKuu',
-              'g-recaptcha-response'
             )
               .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
+                // console.log('SUCCESS!', response.status, response.text);
                 window.alert("Your message has been sent. Thank you for your feedback!")
                 // disable form
+                document.getElementById("your_name").disabled = true;
+                document.getElementById("your_email").disabled = true;
+                document.getElementById("message").disabled = true;
+                document.getElementById("submit").disabled = true;
+                document.getElementById("submit").style.opacity = 0;
+                document.getElementById("recaptcha").style.opacity = 0;
               })
               .catch((err) => {
                 console.log('FAILED...', err);
@@ -73,13 +50,13 @@ export default function Contact() {
         
           const handleChange = (e) => {
             setToSend({ ...toSend, [e.target.name]: e.target.value });
+            // console.log(toSend)
           };
 
     return(
         <div className="contact-container">
             <div className="contact">
                 <h1>Contact</h1>
-                {/* <p className="Contact">Click <a href="mailto:rcjuneau8@gmail.com?subject=Reaching out from your Portfolio site" rel="noreferrer" target="_blank" style={{color: 'white'}}>here</a> to send me an email (mailto)</p> */}
                 <p className="Contact">You're welcome to follow me on <a href="https://bsky.app/profile/ejuneau.me" rel="noreferrer" target="_blank" style={{color: 'var(--text-color)'}}>BlueSky</a>, connect with me on <a href="https://linkedin.com/in/e-juneau/" rel="noreferrer" target="_blank" style={{color: 'var(--text-color)'}}>LinkedIn</a>, or you can send me an email via the form below:</p>
 
                 <form onSubmit={onSubmit} className="contact-form">
@@ -111,7 +88,7 @@ export default function Contact() {
                      value={toSend.message}
                      onChange={handleChange}
                  />
-                  <ReCAPTCHA id="recaptcha" ref={refCaptcha} required sitekey={process.env.REACT_APP_SITE_KEY} onChange={sendEmail}/>
+                  <ReCAPTCHA id="recaptcha" ref={refCaptcha} required sitekey={process.env.REACT_APP_SITE_KEY} onChange={handleCaptchaChange}/>
                  <button key="submit" id="submit" type='submit' >Send</button>
 
                 

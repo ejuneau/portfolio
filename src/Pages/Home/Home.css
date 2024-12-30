@@ -43,11 +43,10 @@
 }
 @keyframes wave {
   0% {rotate: 0deg;}
-  50% {rotate: -30deg;}
-  55% {rotate: -28deg}
-  88% {rotate: 5deg}
-  99% {rotate: -1deg}
-  100% {rotate: 0deg;}
+  20% {rotate: 30deg;}
+  21% {rotate: 28deg; }
+  58% {rotate: -8deg; }
+  70% {rotate: 0deg;}
 }
 .App a {
   color: var(--text-color);

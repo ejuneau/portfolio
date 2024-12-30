@@ -13,6 +13,9 @@ header {
 header nav li a, header h1 a {
     color: var(--text-color);
     text-decoration: none;
+    -webkit-text-decoration: none;
+    text-decoration-line: none;
+    -webkit-text-decoration-line: none;
     filter: drop-shadow(0.05em 0.05em 0.5em var(--background-color));  
 
 } 
@@ -41,6 +44,7 @@ header nav li {
     list-style-type: none;
     padding: 0 1em;
     text-decoration: underline;
+    -webkit-text-decoration: underline;
     color: transparent;
 }
 header nav li a {
@@ -51,6 +55,7 @@ header nav li:hover {
 }
 .active-link {
     text-decoration: underline;
+    -webkit-text-decoration: underline;
     color: var(--text-color);
 }
 

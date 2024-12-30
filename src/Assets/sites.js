@@ -82,7 +82,7 @@ const sites = [
     {
         color:              "#3daeda",
         key:                "reclaim",
-        link:               "https://spyglass-hsef.onrender.com/",
+        link:               "https://reclaimliteracy.ca/",
         title:              "RECLAIM Literacy",
         description:        "Nonprofit organisation.",
         desktopImageFull:   reclaimDesktopFull,

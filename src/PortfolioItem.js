@@ -1,22 +1,19 @@
 import ProgressiveImage from "react-progressive-graceful-image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import sites from "./Assets/sites";
+import { faArrowUpRightFromSquare, faCircleInfo, } from "@fortawesome/free-solid-svg-icons";
 
 function PortfolioItem(props) {
-const { site, isDesktop } = props;
+const { project, isDesktop } = props;
 
 	const [isActive, setIsActive] = useState(false);
 	const toggleActive = function() {
 		setIsActive(!isActive)
 	}
-	//get index of current site
-	let index = sites.indexOf(site);
 
 	return (
-		<div className="portfolio-item-container" key={site.key} draggable="false" onClick={() => toggleActive()}>
+		<div className="portfolio-item-container" key={project.key} draggable="false" onClick={() => toggleActive()}>
 			{/* {index !== 0 && window.innerWidth < 767 && !isDesktop && <FontAwesomeIcon icon={icon({name: "chevron-left"})} className="chevron chevron-left" />} */}
 			<div className={`portfolio-item ${isDesktop?'desktop-portfolio-item':'mobile-portfolio-item'} ${isActive?'active':null}`} 
 			style={{
@@ -64,19 +61,19 @@ const { site, isDesktop } = props;
 				}}>
 
 				<div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>    
-					<h3>{site.title}</h3>
-					<p style={{margin: "1.5em 0", width: "100%"}}>{site.description}</p>
+					<h3>{project.title}</h3>
+					<p style={{margin: "1.5em 0", width: "100%"}}>{project.description}</p>
 					<div style={{display: "flex", width: "100%", justifyContent: "center", flexDirection: isDesktop ? "row":"column"}}>
-						<a style={{color: "var(--text-color)", marginRight: isDesktop?"1em":"0em", marginBottom: isDesktop?"0em":"1em"}} draggable="false" href={site.link} rel="noreferrer" target="_blank">Visit</a>
-						<Link style={{color: "var(--text-color)", marginLeft: isDesktop?"1em":"0em", marginTop: isDesktop?"0em":"1em"}} draggable="false" to={site.key}>Learn More</Link>
+					<Link className='portfolio-item-button' style={{marginRight: isDesktop?"1em":"0em", marginBottom: isDesktop?"0em":"1em"}} draggable="false" to={project.key}><FontAwesomeIcon icon={faCircleInfo}  /><p>Learn More</p></Link>
+						<a className='portfolio-item-button' style={{marginLeft: isDesktop?"1em":"0em", marginTop: isDesktop?"0em":"1em"}} draggable="false" href={project.link} rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faArrowUpRightFromSquare}  /><p>Visit</p></a>
 					</div>
 				</div>
 
-				<ProgressiveImage src={isDesktop ? site.desktopImageFull : !isDesktop ? site.mobileImageFull: null} alt={site.title + ": " + site.description} placeholder={isDesktop ? site.desktopImagePh : !isDesktop ? site.mobileImagePh: null} >
-					{(src) => <img src={src} draggable="false" alt={site.title + ": " + site.description} />}
+				<ProgressiveImage src={isDesktop ? project.desktopImageFull : !isDesktop ? project.mobileImageFull: null} alt={project.title + ": " + project.description} placeholder={isDesktop ? project.desktopImagePh : !isDesktop ? project.mobileImagePh: null} >
+					{(src) => <img src={src} draggable="false" alt={project.title + ": " + project.description} />}
 				</ProgressiveImage>
 			</div>
-			{/* {index !== sites.length -1 && window.innerWidth < 767 && !isDesktop &&  <FontAwesomeIcon icon={icon({name: "chevron-right"})} className="chevron chevron-right" />} */}
+			{/* {index !== projects.length -1 && window.innerWidth < 767 && !isDesktop &&  <FontAwesomeIcon icon={icon({name: "chevron-right"})} className="chevron chevron-right" />} */}
 
 		</div>
   );

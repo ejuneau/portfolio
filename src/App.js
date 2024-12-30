@@ -11,57 +11,79 @@ import { createBrowserRouter, ScrollRestoration } from 'react-router-dom';
 import { Outlet, RouterProvider } from 'react-router';
 import { useState, useEffect } from 'react';
 
+import faviconLight from './Assets/favicon-light.png'
+import faviconDark from './Assets/favicon-dark.png'
+
 
 function App() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
 
-    const setLightMode = () => document.documentElement.style.cssText = "--background-color: var(--off-white); --text-color: var(--off-black); --image-opacity: var(--light-mode-opacity)";
-    const setDarkMode  = () => document.documentElement.style.cssText = "--background-color: var(--off-black); --text-color: var(--off-white); --image-opacity: var(--dark-mode-opacity)";
+    // const updateFavicon = (isDarkMode) => {
+    //   let link = document.querySelector("link[rel~='icon']");
+    //   if (!link) {
+    //     link = document.createElement('link');
+    //     link.rel = 'icon';
+    //     document.getElementsByTagName('head')[0].appendChild(link);
+    //   }
+    //   link.ref = isDarkMode ? faviconDark : faviconLight
+    // }
 
+    const [ isDarkMode, setIsDarkMode ] = useState(JSON.parse(localStorage.getItem("isDarkMode")))
 
+    const setLightMode = () => {
+      localStorage.setItem("isDarkMode", JSON.stringify(false))
+      document.documentElement.style.cssText = "--background-color: var(--off-white); --text-color: var(--off-black); --image-opacity: var(--light-mode-opacity)";
+      // updateFavicon(false)
+      setIsDarkMode(false)
+    }
+    const setDarkMode  = () => {
+      localStorage.setItem("isDarkMode", JSON.stringify(true))
+      document.documentElement.style.cssText = "--background-color: var(--off-black); --text-color: var(--off-white); --image-opacity: var(--dark-mode-opacity)";
+      // updateFavicon(true)
+      setIsDarkMode(true)
+}
     const toggleDarkMode = () => {
-      //store the CURRENT OPPOSITE of isDarkMode in localstorage
-      localStorage.setItem("isDarkMode", JSON.stringify(!isDarkMode))
-      //invert the CURRENT VALUE of isDarkMode
-      setIsDarkMode(!isDarkMode)
-      // if (JSON.parse(localStorage.getItem("isDarkMode"))) {
-      //   setDarkMode()
-      // } else {
-      //   setLightMode();
-
-      // }
-    
+      if (JSON.parse(localStorage.getItem("isDarkMode"))) {
+        setLightMode()
+      } else {
+        setDarkMode()
+      }
+      // console.log(`isDarkMode: ${JSON.parse(localStorage.getItem("isDarkMode"))}`)
     }
 
-    // Defaults to light mode, eventually will read from user preference
     useEffect(() => {
-        console.log(JSON.parse(localStorage.getItem("isDarkMode")))
-
-        if (JSON.parse(localStorage.getItem("isDarkMode"))) { setDarkMode() } 
-        else { setLightMode() }
-      
-    },[])
-    useEffect(() => {
-      console.log(JSON.parse(localStorage.getItem("isDarkMode")))
-
+      // console.log(JSON.parse(localStorage.getItem("isDarkMode")))
       if (JSON.parse(localStorage.getItem("isDarkMode"))) { setDarkMode() } 
       else { setLightMode() }
-    
-  },[isDarkMode])
-    // useEffect(() => {
-    //   if (localStorage.getItem("isDarkMode")) {
-    //     document.documentElement.style.cssText = "--background-color: var(--off-black); --text-color: var(--off-white); --image-opacity: var(--dark-mode-opacity)";
-    //   } else {
-    //     document.documentElement.style.cssText = "--background-color: var(--off-white); --text-color: var(--off-black); --image-opacity: var(--light-mode-opacity)";
+  },[])
 
-    //   }
-    // })
-  const offBlack="#0F0F0F";
+
+  useEffect(() => {
+    // let link = document.querySelector("link[rel~='icon']");
+    // if (!link) {
+    //   link = document.createElement('link');
+    //   link.rel = 'icon';
+    //   document.getElementsByTagName('head')[0].appendChild(link);
+    // }
+    // link.ref = JSON.parse(localStorage.getItem("isDarkMode")) ? faviconDark : faviconLight
+
+    // console.log(link.ref)
+    const updateFavicon = async () => {
+      const favicon = document.getElementById('favicon');
+      if (JSON.parse(localStorage.getItem("isDarkMode"))) {
+        favicon.href = faviconDark
+      } else {
+        favicon.href = faviconLight
+      }
+    }
+
+    updateFavicon()
+  }, [isDarkMode]);
+
   function Page() {
 
     return(
       <>
-        <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Header toggleDarkMode={toggleDarkMode} />
         <ScrollRestoration />
         <Outlet />
         <Footer />
@@ -76,7 +98,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home offBlack={offBlack}/>
+          element: <Home />
   
         },
         {

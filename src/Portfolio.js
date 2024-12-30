@@ -2,27 +2,12 @@ import './Portfolio.css';
 import 'react-indiana-drag-scroll/dist/style.css';
 import sites from './Assets/sites';
 import games from './Assets/games';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-import {ReactComponent as Arrows} from './Assets/arrow-left-right.svg';
 import PortfolioItem from './PortfolioItem';
-import PortfolioItemGame from './PortfolioItemGame';
 
 export default function Portfolio() {
-    
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const handleScroll = () => {
-        const position = window.scrollY;
-        setScrollPosition(position)
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    }, []);
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 767 ? true : false);
 
@@ -47,7 +32,7 @@ export default function Portfolio() {
                     {
                         sites.map(site => {
                             return (
-                                <PortfolioItem key={site.key} site={site} isDesktop={isDesktop} />
+                                <PortfolioItem key={site.key} project={site} isDesktop={isDesktop} />
                             )
                         })
                     }
@@ -57,7 +42,7 @@ export default function Portfolio() {
                 {
                     games.map(game => {
                         return (
-                            <PortfolioItemGame key={game.key} game={game} site={game} />
+                            <PortfolioItem key={game.key} project={game} isDesktop={true} />
                         )
                     })
                 }

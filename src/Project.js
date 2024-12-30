@@ -43,10 +43,10 @@ function Project() {
         </div>
       }
       <div className="project-cover">
-        <a href={project.link} draggable="false" target="_blank" rel="noreferrer" style={{display: "flex", alignItems: "baseline", paddingTop: "5vh"}}>
+        <a href={project.link} draggable="false" target="_blank" rel="noreferrer" style={{display: "flex", alignItems: "baseline", marginTop: "5vh"}}>
           <h1>{project.title}</h1> 
           <FontAwesomeIcon className="forward-icon" icon={icon({name: "arrow-up-right-from-square", size: "2xs"})} style={{marginLeft: "0.5em"}} />
-          <p style={{marginLeft: "0.5em", marginRight: '1em'}}>Visit</p>
+          {/* <p style={{marginLeft: "0.5em", marginRight: '1em'}}>Visit</p> */}
         </a>
         <p>{project.longDescription}</p>
         <h2>I worked on:</h2>
