@@ -19,6 +19,8 @@
     text-decoration: none;
     color: var(--text-color);
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 .portfolio-item h3 {
     font-size: 1.4rem;
@@ -205,6 +207,10 @@
     }
     .mobile-portfolio-item {
         scroll-snap-align: center;
+
+    }
+    .portfolio-item-container {
+        width: 100vw;
 
     }
     .portfolio-item div {
