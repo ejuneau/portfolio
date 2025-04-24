@@ -4,6 +4,9 @@ import camelquestPh   from './images/desktop/ph/camelquest.png';
 import dtefiieFull    from './images/desktop/full/dtefiie.png';
 import dtefiiePh      from './images/desktop/ph/dtefiie.png';
 
+import afterloveFull  from './images/desktop/full/afterlove.png';
+import afterlovePh    from './images/desktop/ph/afterlove.png';
+
 
 const games = [
   {
@@ -21,6 +24,20 @@ const games = [
                               "General bug fixes" 
                           ]
   },
+  {
+    color:              "#da576b",
+    key:                "afterloveep",
+    link:               "https://www.fellowtraveller.games/afterlove-ep",
+    title:              "Afterlove EP",
+    description:        "A slice of life adventure set in urban Jakarta",
+     desktopImageFull:   afterloveFull,
+     desktopImagePh:     afterlovePh, 
+    longDescription:    "Taking place in the vibrant city of Jakarta, capital of Indonesia, Afterlove EP is a blend of visual novel, narrative adventure and rhythm game elements from the creator of Coffee Talk and What Comes After. Step into the shoes of Rama, a young musician struggling to move on with life after the death of their girlfriend, Cinta. Whilst his close friends and bandmates are all determined to help him move on, Rama has been stuck for more than a year. He’s neglecting his music, his mental health and his relationships. Making things harder, he’s hearing Cinta’s voice inside his head, unsure if she is a spirit or part of his imagination. (Source: fellowtraveller.games)",
+    involvement:        [
+                            "Additional Writing"
+                        ],
+    showreel: "V6oU723gfIk"
+},
   {
       color:              "#224722",
       key:                "dtefiie",
