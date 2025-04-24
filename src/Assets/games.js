@@ -34,7 +34,8 @@ const games = [
      desktopImagePh:     afterlovePh, 
     longDescription:    "Taking place in the vibrant city of Jakarta, capital of Indonesia, Afterlove EP is a blend of visual novel, narrative adventure and rhythm game elements from the creator of Coffee Talk and What Comes After. Step into the shoes of Rama, a young musician struggling to move on with life after the death of their girlfriend, Cinta. Whilst his close friends and bandmates are all determined to help him move on, Rama has been stuck for more than a year. He’s neglecting his music, his mental health and his relationships. Making things harder, he’s hearing Cinta’s voice inside his head, unsure if she is a spirit or part of his imagination. (Source: fellowtraveller.games)",
     involvement:        [
-                            "Additional Writing"
+                            "Internal production",
+                            "Additional writing"
                         ],
     showreel: "V6oU723gfIk"
 },
