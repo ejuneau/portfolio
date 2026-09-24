@@ -24,14 +24,14 @@ export const links: Route.LinksFunction = () => [
   {
     media: "(prefers-color-scheme: light)",
     rel: "icon",
-    url: "/public/favicon-light.ico",
-    href: "/public/favicon-light.ico",
+    url: "./app/welcome/assets/favicon-light.ico",
+    href: "./app/welcome/assets/favicon-light.ico",
   },
     {
     media: "(prefers-color-scheme: dark)",
     rel: "icon",
-    url: "/public/favicon-dark.ico",
-    href: "/public/favicon-dark.ico",
+    url: "./app/welcome/assets/favicon-dark.ico",
+    href: "./app/welcome/assets/favicon-dark.ico",
   },
 ];
 

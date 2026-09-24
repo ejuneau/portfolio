@@ -4,18 +4,20 @@ import { Welcome } from "../welcome/welcome";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Eve Juneau's Portfolio" },
-    { name: "description", content: "Welcome to React Router!" },
+    { name: "description", content: "Passionate about creating engaging user experiences." },
     { icon: [
       {
-        media: '(prefer-color-scheme:light)',
-        url: '/public/favicon-light.ico',
-        href: '/public/favicon-light.ico',
+        media: "(prefers-color-scheme: light)",
+        rel: "icon",
+        url: "./app/welcome/assets/favicon-light.ico",
+        href: "./app/welcome/assets/favicon-light.ico",
       },
-      {
-        media: 'prefer-color-scheme:dark)',
-        url: '/public/favicon-dark.ico',
-        href: '/public/favicon-dark.ico',
-      }
+        {
+        media: "(prefers-color-scheme: dark)",
+        rel: "icon",
+        url: "./app/welcome/assets/favicon-dark.ico",
+        href: "./app/welcome/assets/favicon-dark.ico",
+      },
     ]
     }
   ];

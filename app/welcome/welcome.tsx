@@ -19,24 +19,24 @@ import gettingkilled from './assets/gettingkilled.png'
 export function Welcome() {
 
   return (
-    <main className="flex items-center justify-center">
-      <div className="flex-1 flex flex-col items-center gap-48 min-h-0 pt-16">
+    <main id="top" className="flex items-center justify-center">
+      <div className="flex-1 flex flex-col items-center gap-24 min-h-0 pt-16">
         <header className="flex sticky flex-row items-center w-[100vw] gap-16 h-[5em] pl-[15vw] pr-[15vw]">
-          <a href="/" className="title">Eve Juneau</a>
+          <a onClick={() => document.getElementById("top")?.scrollIntoView()} className="title">Eve Juneau</a>
           <div className="spacer grow"></div>
-          <a href="#marketing">Marketing</a>
-          <a href="#games">Games</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a onClick={() => document.getElementById("marketing")?.scrollIntoView()}>Marketing</a>
+          <a onClick={() => document.getElementById("games")?.scrollIntoView()}>Games</a>
+          <a onClick={() => document.getElementById("about")?.scrollIntoView()}>About</a>
+          <a onClick={() => document.getElementById("contact")?.scrollIntoView()}>Contact</a>
         </header>  
         <div className="header-spacer flex flex-row items-center w-[100vw] gap-16 h-[1em] pl-[15vw] pr-[15vw]"></div>      
-        <div className="flex flex-row center place-content-between w-[75vw]">
+        <div className="flex flex-row center place-content-between w-[75vw] mt-[2.5em]">
 
           <div className="flex flex-col w-[35vw] gap-8">
             <div className="flex flex-row" ><h1 className="title wave w-[2em]">👋</h1><h1 className="title"> Hi, I'm Eve!</h1></div>
             <p className="">I've been working in video games and marketing for three years, and have been making websites for nearly ten.</p>
             <p className=""><strong>I'm passionate about creating engaging user experiences.</strong></p>
-            <a className="button w-fit">Get in touch!</a>
+            <a className="button w-fit" onClick={() => document.getElementById("contact")?.scrollIntoView()}>Get in touch!</a>
             <div className="h-[3em]"></div>
             <h2><strong>Recent Highlight:</strong></h2>
             <p>I analyzed trends to develop and execute a content strategy which:</p>
@@ -55,19 +55,21 @@ export function Welcome() {
           </div>
 
         </div>
-        <div className="flex flex-col w-[75vw] gap-8">
-          <h1><strong>Portfolio - Marketing</strong></h1>
+        <div className="flex flex-col w-[75vw] gap-8 " id="marketing">
+          <h1 className="mt-[7.5em]"><strong>Portfolio - Marketing</strong></h1>
           <ul className="flex flex-row gap-16 place-content-between">
             {marketing_portfolio.map(marketing_resource => 
                     <li key={marketing_resource.text} className="flex flex-col gap-4 justify-start">
                       <a href={marketing_resource.href} target="_blank" rel="noreferrer">
-                        <img src={marketing_resource.img}/>
+                        <div>
+                          <img src={marketing_resource.img}/>
+                        </div>
                       </a>
                       <a href={marketing_resource.href}><strong>{marketing_resource.text}</strong></a>
                       <p>Role: {marketing_resource.role}</p>
                       <ul className="list-disc ml-[2em]">
                         {marketing_resource.tasks.map(task => 
-                        <li>
+                        <li key={task}>
                           <p>{task}</p>
                         </li>)}
                       </ul>
@@ -84,13 +86,15 @@ export function Welcome() {
         </div>
 
 
-        <div className="flex flex-col w-[75vw] gap-8">
-          <h1><strong>Portfolio - Games</strong></h1>
+        <div className="flex flex-col w-[75vw] gap-8 " id="games">
+          <h1 className='mt-[7.5em]'><strong>Portfolio - Games</strong></h1>
           <ul className="flex flex-row gap-16 place-content-between">
             {games.map(game => 
                     <li key={game.name} className="flex flex-col gap-4 justify-start">
                       <a href={game.href} target="_blank" rel="noreferrer">
-                        <img src={game.img}/>
+                        <div>
+                         <img src={game.img}/>
+                        </div>
                       </a>
                       <a href={game.href}><strong>{game.name}</strong></a>
                       <p>Role: {game.role}</p>
@@ -123,8 +127,8 @@ export function Welcome() {
           </ul>
         </div>
 
-        <div className="flex flex-col w-[75vw] gap-8">
-          <h1><strong>A little more about me!</strong></h1>
+        <div className="flex flex-col w-[75vw] gap-8 " id="about">
+          <h1 className="mt-[7.5em]"><strong>A little more about me!</strong></h1>
           <p>My name is Eve Juneau (they/she), a developer based in Montréal, Canada. Specializing in <strong>web design</strong> design via React and <strong>game development</strong> in Godot, I love the ways stories connect us and share ourselves with the world.</p>
           <p>With over a decade of experience both in freelance as well as contract work, I offer services ranging from consultation, to designing, to fully building and executing your plans and bring them to life.</p>
           <p>To get in touch regarding any of the above, please feel free to reach me at the contact form below!</p>
@@ -151,8 +155,8 @@ export function Welcome() {
             </div>
         </div>
 
-        <div className="flex flex-col w-[75vw] gap-8">
-          <h1><strong>Let's work together :)</strong></h1>
+        <div className="flex flex-col w-[75vw] gap-8 " id="contact">
+          <h1 className="mt-[7.5em]"><strong>Let's work together :)</strong></h1>
           <div className="flex flex-row gap-48 place-content-center">
             <div className="flex flex-col">
               <img src={silly} className="w-[21vw]"/>
@@ -171,8 +175,8 @@ export function Welcome() {
           
         </div>
 
-        <footer className="flex flex-col items-center w-[100vw] gap-4 h-[5em] pl-[15vw] pr-[15vw]">
-          <p>Copyright Eve Juneau, 2026</p>
+        <footer className="flex flex-col items-center w-[100vw] gap-4 h-[5em] pl-[15vw] pr-[15vw] text-sm">
+          <p>Copyright 2026 Eve Juneau</p>
           <p>Made with ❤️ in <a href="https://reactrouter.com/">React Router</a></p>
         </footer>
       </div>

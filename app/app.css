@@ -7,6 +7,17 @@
   --dark-bg-accent:#1E1F1F;
 }
 
+a {
+  cursor: pointer;
+}
+a div {
+  overflow: hidden;
+  border-radius: 15px;
+}
+a:hover div img {
+  scale: 110%;
+}
+
 * {
   /* outline: 1px solid red; */
   transition: all 0.3s ease-in-out;
@@ -27,7 +38,7 @@ header {
 
 html,
 body {
-
+  scroll-behavior: smooth;
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
