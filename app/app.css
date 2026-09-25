@@ -21,6 +21,7 @@ a:hover div img {
 * {
   /* outline: 1px solid red; */
   transition: all 0.3s ease-in-out;
+  scrollbar-color: var(--dark-bg-accent) var(--dark-bg-accent);
 }
 header {
   border-bottom: 0.1em solid #1E1F1F4D;
@@ -28,7 +29,11 @@ header {
   margin-bottom: -0.1em;
   position: fixed;
   top: 0;
-    background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--light-bg-color), var(--light-bg-accent));
+  background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--light-bg-color), var(--light-bg-accent));
+}
+
+.showMenuNav {
+  background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--light-bg-color), var(--light-bg-accent));
 }
 
 @theme {
@@ -36,13 +41,24 @@ header {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+  .HAMBURGER-ICON > * {
+  background-color: var(--dark-bg-accent);
+}
+.CROSS-ICON > svg {
+ color: var(--dark-bg-accent);
+}
+
 html,
 body {
   scroll-behavior: smooth;
+  width: 100vw;
+  overflow-x: hidden;
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
+
+
 
 a {
   text-decoration: underline;
@@ -60,7 +76,7 @@ a:hover {
 }
 .title {
     font-family: 'Libre Bodoni Variable', serif;
-    font-size: 2em;
+    /* font-size: 2em; */
 }
 .highlight {
   color: var(--dark-bg-accent);
@@ -225,6 +241,16 @@ img {
   }
 
 @media (prefers-color-scheme: dark) {
+* {
+  scrollbar-color: var(--light-bg-accent) var(--light-bg-accent);
+}
+
+  .HAMBURGER-ICON > * {
+  background-color: var(--light-bg-accent);
+}
+.CROSS-ICON > svg {
+ color: var(--light-bg-accent);
+}
 
   img {
     opacity: 0.8;
@@ -240,6 +266,9 @@ img {
    background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--dark-bg-color), var(--dark-bg-accent));
   }  
 
+  .showMenuNav {
+   background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--dark-bg-color), var(--dark-bg-accent));
+}
 
   .button {
     background-color: var(--light-bg-color);
