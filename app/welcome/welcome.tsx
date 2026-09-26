@@ -1,9 +1,9 @@
 import '@fontsource/poppins';
 import '@fontsource-variable/libre-bodoni';
 
+import AdaptiveFavicon from '~/adaptiveFavicon';
+
 import { useEffect } from 'react';
-import faviconLight from './assets/favicon-light.ico'
-import faviconDark from './assets/favicon-dark.ico'
 
 import { useState } from 'react';
 
@@ -24,27 +24,120 @@ import gettingkilled from './assets/gettingkilled.png'
 
 export function Welcome() {
 
+
+
+  function getActiveSlideIndexMarketing() {
+    const slideWidth = document.querySelectorAll('.carousel-slide-marketing')[0].offsetWidth // Width of one slide
+    //scrollLeft = number of pixels scrolled from the left
+    //Divide by slideWitdh to get index (rounded to nearest integert)
+    return Math.round(document.querySelector('.carousel-slides-marketing').scrollLeft / slideWidth)
+  }
+
+  function updateActiveDotMarketing() {
+    const activeIndex = getActiveSlideIndexMarketing();
+    const dots = document.querySelectorAll('.carousel-dot-marketing')
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[activeIndex].classList.add('active');
+  }
+
+  function getActiveSlideIndexGaming() {
+    const slideWidth = document.querySelectorAll('.carousel-slide-gaming')[0].offsetWidth // Width of one slide
+    //scrollLeft = number of pixels scrolled from the left
+    //Divide by slideWitdh to get index (rounded to nearest integert)
+    return Math.round(document.querySelector('.carousel-slides-gaming').scrollLeft / slideWidth)
+  }
+
+  function updateActiveDotGaming() {
+    const activeIndex = getActiveSlideIndexGaming();
+    const dots = document.querySelectorAll('.carousel-dot-gaming')
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[activeIndex].classList.add('active');
+  }
+
+
   useEffect(() => {
-    var linkElement = document.querySelector("link[rel='icon']");
-    if (!linkElement) {
-      linkElement = document.createElement("a");
-    }
-    if (linkElement.href) {
-      var isDarkMode = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'));
-      linkElement.href = isDarkMode.matches ? faviconDark : faviconLight;
-    }
+
+    const carouselSlidesMarketing = document.querySelector('.carousel-slides-marketing');
+    const dotsContainerMarketing = document.querySelector('.carousel-dots-marketing');
+    const slidesMarketing = document.querySelectorAll('.carousel-slide-marketing');
+
+    const carouselSlidesGaming = document.querySelector('.carousel-slides-gaming');
+    const dotsContainerGaming = document.querySelector('.carousel-dots-gaming');
+    const slidesGaming = document.querySelectorAll('.carousel-slide-gaming');
+
+    slidesMarketing.forEach((_, index) => {
+      // create a dot button
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot-marketing', `slide-${index+1}`);
+      dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      if (index == 0) {
+        dot.classList.add('active')
+      }
+
+      // add click functionality
+      dot.addEventListener('click', () => {
+        const slideWidth = slidesMarketing[0].offsetWidth;
+        //scroll to the slide: index * slideWidth = left position
+        carouselSlidesMarketing?.scrollTo({
+          left: index * slideWidth,
+          behavior: 'smooth'
+        })
+      })
+
+      // add dot to container
+      if (dotsContainerMarketing?.children.length < slidesMarketing.length) { 
+        dotsContainerMarketing?.appendChild(dot) 
+      }
+    })
+
+
+
+    slidesGaming.forEach((_, index) => {
+      // create a dot button
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot-gaming', `slide-${index+1}`);
+      dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+      if (index == 0) {
+        dot.classList.add('active')
+      }
+
+      // add click functionality
+      dot.addEventListener('click', () => {
+        const slideWidth = slidesGaming[0].offsetWidth;
+        //scroll to the slide: index * slideWidth = left position
+        carouselSlidesGaming?.scrollTo({
+          left: index * slideWidth,
+          behavior: 'smooth'
+        })
+      })
+
+      // add dot to container
+      if (dotsContainerGaming?.children.length < slidesGaming.length) { 
+        dotsContainerGaming?.appendChild(dot) 
+      }
+    })
+
+      //DO THIS 
+      //https://www.xjavascript.com/blog/indicators-dots-with-css-scroll-snap/#prerequisites
+
+  }, [])
+
+  useEffect(() => {
+
 
 
 		document.querySelector("html")?.classList.contains("dark")
 			? document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#2E2F2F")
 			: document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#EEE7D7");
 
+    
   })
 
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <main id="top" className="flex items-center justify-center">
+      <AdaptiveFavicon />
       <div className="flex-1 flex flex-col items-center lg:gap-24 min-h-0 pt-16">
         <header className="flex sticky flex-row items-center w-[100vw] gap-16 h-[5em] pl-[15vw] pr-[15vw]">
           <a onClick={() => document.getElementById("top")?.scrollIntoView()} className="title text-xl lg:text-[2em]">Eve Juneau</a>
@@ -67,6 +160,19 @@ export function Welcome() {
           </div>
 
           <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
+            <header className="flex sticky flex-row items-center w-[100vw] gap-16 h-[5em] pl-[15vw] pr-[15vw]">
+              <a onClick={() => {setIsNavOpen(false); setTimeout(() => document.getElementById("top")?.scrollIntoView(), 1);}} className="title text-xl lg:text-[2em]">Eve Juneau</a>
+              <div className="spacer grow"></div>
+
+                <div
+                  className="CROSS-ICON  h-8 w-8"
+                  onClick={() => setIsNavOpen(false)}
+                >
+                  <span className="absolute top-[50%] h-0.5 w-8 rotate-45"></span>
+                  <span className="absolute top-[50%] h-0.5 w-8 rotate-135"></span>
+                </div>
+            </header>
+
             <div
               className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
@@ -105,11 +211,10 @@ export function Welcome() {
                   opacity: 0;
                 }
                 .showMenuNav {
-                  display: block;
                   opacity: 1;
-                  position: absolute;
-                  width: 100%;
+                  width: 100vw;
                   height: 100vh;
+                  position: absolute;
                   top: 0;
                   left: 0;
                   z-index: 5;
@@ -123,7 +228,6 @@ export function Welcome() {
               {isNavOpen && <style>
                 {`
                 main {
-                height: 100vh;
                 overflow-y: hidden;
                 }`}
               </style>}
@@ -137,7 +241,7 @@ export function Welcome() {
 
             <img className="w-[70%] h-[40%] lg:hidden overflow-hidden self-center object-cover object-top" src={headshot}></img>
             <div className="flex flex-row self-center lg:self-start text-2xl lg:text-[2em]" ><h1 className="title wave w-[2em] ">👋</h1><h1 className="title"> Hi, I'm Eve!</h1></div>
-            <p className="">I've been working in video games and marketing for three years, and have been making websites for nearly ten.</p>
+            <p className="">I'm a game developer and marketer based in Montréal, working in Godot. I've been in the games industry for three years doing programming and marketting, and I have nearly ten years of building websites.</p>
             <p className=""><strong>I'm passionate about creating engaging user experiences.</strong></p>
             <a className="button w-fit self-center lg:self-start" onClick={() => document.getElementById("contact")?.scrollIntoView()}>Get in touch!</a>
             
@@ -147,7 +251,7 @@ export function Welcome() {
             <p>I analyzed trends to develop and execute a content strategy which:</p>
 
             <ul className="flex flex-col gap-8">
-              <li className="highlight">Boosted Linked Followers by 600% over 8 months</li>
+              <li className="highlight">Boosted LinkedIn Followers by 600% over 8 months</li>
               <li className="highlight">Established steady followership on Instagram and TikTok</li>
               <li className="highlight">Delivered brand recognition through SEO on CRM sites like WordPress</li>
             </ul>
@@ -164,9 +268,9 @@ export function Welcome() {
         </div>
         <div className="flex flex-col w-[100vw] lg:w-[75vw] gap-8 " id="marketing">
           <h1 className="mt-[7.5em] ml-[12.5vw] lg:ml-0"><strong>Portfolio - Marketing</strong></h1>
-          <ul className="flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 place-content-between pb-8 lg:pb-0 overflow-x-scroll snap-x snap-mandatory mb-8 lg:mb-0">
+          <ul onScroll={() => updateActiveDotMarketing()} className="flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 carousel-slides-marketing place-content-between pb-0 overflow-x-scroll lg:overflow-hidden snap-x snap-mandatory ">
             {marketing_portfolio.map(marketing_resource => 
-                    <li key={marketing_resource.text} className="flex flex-col w-[80vw] lg:w-[20vw] snap-center shrink-0  grow gap-4 justify-start">
+                    <li key={marketing_resource.text} className="carousel-slide-marketing flex flex-col w-[80vw] lg:w-[20vw] snap-center shrink-0  grow gap-4 justify-start">
                       <a href={marketing_resource.href} target="_blank" rel="noreferrer">
                         <div>
                           <img src={marketing_resource.img}/>
@@ -183,6 +287,7 @@ export function Welcome() {
                     </li>
                   )}
           </ul>
+          <div className="carousel-dots-marketing  block flex lg:hidden mb-8 lg:mb-0"></div>
         </div>
         <div className=" callout flex flex-col w-[80vw] lg:w-[35vw] gap-8 flex-wrap p-4 lg:p-8">
           <h1><strong>I've worked with:</strong></h1>
@@ -195,9 +300,9 @@ export function Welcome() {
 
         <div className="flex flex-col w-[100vw] lg:w-[75vw] gap-8 " id="games">
           <h1 className='mt-[7.5em] ml-[12.5vw] lg:ml-0'><strong>Portfolio - Games</strong></h1>
-          <ul className="flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 place-content-between pb-8 lg:pb-0 overflow-x-scroll snap-x snap-mandatory mb-8 lg:mb-0">
+          <ul onScroll={() => updateActiveDotGaming()} className="carousel-slides-gaming flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 place-content-between overflow-x-scroll snap-x snap-mandatory ">
             {games.map(game => 
-                    <li key={game.name} className="flex flex-col w-[80vw] lg:w-[20vw] snap-center shrink-0  grow gap-4 justify-start">
+                    <li key={game.name} className="flex flex-col w-[80vw] lg:w-[20vw] carousel-slide-gaming snap-center shrink-0  grow gap-4 justify-start">
                       <a href={game.href} target="_blank" rel="noreferrer">
                         <div>
                          <img src={game.img}/>
@@ -214,6 +319,7 @@ export function Welcome() {
                     </li>
                   )}
           </ul>
+          <div className="carousel-dots-gaming block flex lg:hidden mb-8 lg:mb-0"></div>
         </div>
 
         <div className="callout flex flex-col w-[80vw] lg:w-[35vw] gap-8 flex-wrap p-4 lg:p-8">
@@ -236,7 +342,7 @@ export function Welcome() {
 
         <div className="flex flex-col w-[75vw] gap-8 " id="about">
           <h1 className="mt-[7.5em]"><strong>A little more about me!</strong></h1>
-          <p>My name is Eve Juneau (they/she), a developer based in Montréal, Canada. Specializing in <strong>web design</strong> design via React and <strong>game development</strong> in Godot, I love the ways stories connect us and share ourselves with the world.</p>
+          <p>My name is Eve Juneau (they/she), a developer based in Montréal, Canada. Specializing in <strong>web design</strong> via React and <strong>game development</strong> in Godot, I love the ways stories connect us and share ourselves with the world.</p>
           <p>With over a decade of experience both in freelance as well as contract work, I offer services ranging from consultation, to designing, to fully building and executing your plans and bring them to life.</p>
           <p>To get in touch regarding any of the above, please feel free to reach me at the contact form below!</p>
           <p>Here's an album that I'm listening to these days:</p>
@@ -249,12 +355,12 @@ export function Welcome() {
                 <h3 className ="title text-2xl lg:text-4xl">{albums[0].artist}</h3>
               </div>
               <img src={albums[0].img} className='lg:w-[20vw]'/>
-            <div className =" flex flex-col gap-8 lg:w-[50%]">
+            <div className =" flex flex-col gap-8 w-[100%] lg:w-[60%]">
               <p className="text-center">Available to listen here:</p>
-              <div className="flex flex-col lg:flex-row gap-8 ">
-                <a className="bandcamp button w-[100%]" href={albums[0].bandcamphref} rel="noreferrer" target="_blank">Bandcamp</a>
-                <a className="applemusic button w-[100%]" href={albums[0].applehref} rel="noreferrer" target="_blank">Apple Music</a>
-                <a className="spotify button w-[100%]" href={albums[0].spotifyhref} rel="noreferrer" target="_blank">Spotify</a>
+              <div className="flex flex-col lg:flex-row center items-center gap-8 w-[100%]">
+                <a className="bandcamp button w-[50vw] lg:w-[100%]" href={albums[0].bandcamphref} rel="noreferrer" target="_blank">Bandcamp</a>
+                <a className="applemusic button w-[50vw] lg:w-[100%]" href={albums[0].applehref} rel="noreferrer" target="_blank">Apple Music</a>
+                <a className="spotify button w-[50vw] lg:w-[100%]" href={albums[0].spotifyhref} rel="noreferrer" target="_blank">Spotify</a>
               </div>
 
             </div>
@@ -275,7 +381,7 @@ export function Welcome() {
               <a className="button linkedin" href="https://www.linkedin.com/in/ejuneau/" rel="noreferrer" target="_blank">LinkedIn</a>
               <a className="button bluesky" href="https://bsky.app/profile/ejuneau.me" rel="noreferrer" target="_blank">Bluesky</a>
               <a className="button instagram" href="https://www.instagram.com/rcjuneau/" rel="noreferrer" target="_blank">Instagram</a>
-              <p className="text-right">...or just <a className="underline" style={{textDecoration: "underline"}} href="mailto:rcjuneau9@gmail.com" rel="noreferrer" target="_blank">email me</a>!</p>
+              <p className="text-right">...or just <a className="underline" style={{textDecoration: "underline"}} href="mailto:rcjuneau8@gmail.com?subject=Reaching%20out%20from%20your%20Portfolio%20site" rel="noreferrer" target="_blank">email me</a>!</p>
             </div>
           </div>
 
@@ -283,7 +389,7 @@ export function Welcome() {
         </div>
 
         <footer className="flex flex-col items-center w-[100vw] gap-4 h-[5em] mt-[5em] lg:mt-0 pl-[15vw] pr-[15vw] text-sm">
-          <p>Copyright 2026 Eve Juneau</p>
+          <p>Copyright {new Date().getFullYear()} Eve Juneau</p>
           <p>Made with ❤️ in <a href="https://reactrouter.com/">React Router</a></p>
         </footer>
       </div>
@@ -387,15 +493,7 @@ const workedWith = [
 ]
 
 const games = [
-  {
-    name: "Afterlove EP",
-    href: "https://store.steampowered.com/app/1599780/Afterlove_EP/",
-    role: "Additional Writing",
-    img: alep,
-    tasks: [
-      "Dialog writing for background characters",
-    ]
-  },
+
   {
     name: "All the World's Cravings",
     href: "https://store.steampowered.com/app/4617160/All_the_Worlds_Cravings/",
@@ -408,14 +506,22 @@ const games = [
   },
   {
     name: "Nomori",
-    href: "https://store.steampowered.com/app/4617160/All_the_Worlds_Cravings/",
+    href: "https://store.steampowered.com/app/2932680/Nomori/",
     role: "Studio Producer - SBI",
     img: nomori,
     tasks: [
       "Studio Production (SBI)",
     ]
   },
-  
+  {
+    name: "Afterlove EP",
+    href: "https://store.steampowered.com/app/1599780/Afterlove_EP/",
+    role: "Additional Writing",
+    img: alep,
+    tasks: [
+      "Dialog writing for background characters",
+    ]
+  },
 ]
 
 const tools = [
@@ -427,6 +533,7 @@ const tools = [
   "Jira",
   "Notion",
   "Git",
+  "Godot"
 ]
 
 const languages = [

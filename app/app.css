@@ -21,7 +21,7 @@ a:hover div img {
 * {
   /* outline: 1px solid red; */
   transition: all 0.3s ease-in-out;
-  scrollbar-color: var(--dark-bg-accent) var(--dark-bg-accent);
+  scrollbar-color: var(--dark-bg-accent) var(--light-bg-accent);
 }
 header {
   border-bottom: 0.1em solid #1E1F1F4D;
@@ -41,7 +41,7 @@ header {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-  .HAMBURGER-ICON > * {
+  .HAMBURGER-ICON > *, .CROSS-ICON > * {
   background-color: var(--dark-bg-accent);
 }
 .CROSS-ICON > svg {
@@ -105,6 +105,7 @@ img {
   height: 1em;
   line-height: 1em; 
   margin-right: 5px;
+
   font-size: 1em;
   top: calc((1.5em - 1em)/2 - 0.1em) 
 }
@@ -152,12 +153,12 @@ img {
   content: "";
   display: inline-block;
   position: relative;
-  width: 1em; 
-  height: 1em;
+  width: 0.75em; 
+  height: 0.75em;
   /* line-height: 1em; */
-  margin-right: 5px;
-  font-size: 1em;
-  top: calc((1.5em - 1em)/2 - 0.1em)
+  margin-right: .5em;
+  /* font-size: 1em; */
+  top: calc((1.5em - 1em)/2 - 0.25em)
 }
 
 .linkedin::before {
@@ -240,17 +241,64 @@ img {
       opacity: 0.6;
   }
 
-@media (prefers-color-scheme: dark) {
-* {
-  scrollbar-color: var(--light-bg-accent) var(--light-bg-accent);
+  .carousel-slides-gaming, .carousel-slides-marketing {
+    scrollbar-width: none;
+  }
+
+.carousel-dots-marketing, .carousel-dots-gaming {
+  /* position: absolute; */
+  /* bottom: 1rem; 1rem from the bottom */
+  /* left: 50%; */
+  width: fit-content;
+  /* transform: translateX(-50%); Center horizontally */
+  gap: 0.5rem; /* Space between dots */
+  padding: 0.5rem;
+  align-self: center;
+  background: #1E1F1F26; /* Semi-transparent background */
+  border-radius: 20px; /* Rounded background */
 }
 
-  .HAMBURGER-ICON > * {
+.carousel-dot-marketing, .carousel-dot-gaming {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* Circular dots */
+  border: none;
+  background: var(--light-bg-accent); /* Light gray inactive dot */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for active state */
+}
+ 
+/* Active Dot */
+.carousel-dot-marketing.active, .carousel-dot-gaming.active {
+  background: var(--dark-bg-color); /* White active dot */
+  transform: scale(1.2); /* Slightly larger active dot */
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-color: var(--light-bg-accent) var(--dark-bg-accent);
+  }
+
+
+
+  .carousel-dots-marketing, .carousel-dots-gaming {
+    background: #E7DDC626; /* Semi-transparent background */
+  }
+
+  .carousel-dot-marketing, .carousel-dot-gaming {
+    background: var(--dark-bg-accent); /* Light gray inactive dot */
+  }
+ 
+  .carousel-dot-marketing.active, .carousel-dot-gaming.active {
+    background: var(--light-bg-color); 
+  }
+
+  .HAMBURGER-ICON > *, .CROSS-ICON > * {
   background-color: var(--light-bg-accent);
-}
-.CROSS-ICON > svg {
- color: var(--light-bg-accent);
-}
+  }
+  .CROSS-ICON > svg {
+  color: var(--light-bg-accent);
+  }
 
   img {
     opacity: 0.8;
@@ -268,7 +316,7 @@ img {
 
   .showMenuNav {
    background: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.80%22%20numOctaves%3D%223%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23n)%22%20opacity%3D%220.35%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(135deg, var(--dark-bg-color), var(--dark-bg-accent));
-}
+  }
 
   .button {
     background-color: var(--light-bg-color);

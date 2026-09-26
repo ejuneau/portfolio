@@ -5,20 +5,15 @@ export function meta({}: Route.MetaArgs) {
   return [
     { title: "Eve Juneau's Portfolio" },
     { name: "description", content: "Passionate about creating engaging user experiences." },
-    { icon: [
-      {
-        media: "(prefers-color-scheme: light)",
-        rel: "icon",
-        url: "./app/welcome/assets/favicon-light.ico",
-        href: "./app/welcome/assets/favicon-light.ico",
-      },
-        {
-        media: "(prefers-color-scheme: dark)",
-        rel: "icon",
-        url: "./app/welcome/assets/favicon-dark.ico",
-        href: "./app/welcome/assets/favicon-dark.ico",
-      },
-    ]
+    {
+      name: "theme-color",
+      content: "#EEE7D7",
+      media: "(prefers-color-scheme:light)"
+    },
+    {
+      name: "theme-color",
+      content: "#2E2F2F",
+      media: "(prefers-color-scheme:dark)"
     }
   ];
 }
