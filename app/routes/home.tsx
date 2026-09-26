@@ -5,7 +5,7 @@ import { Welcome } from "../welcome/welcome";
 import type { MetaFunction } from "react-router";
 
 const SITE_URL = "https://ejuneau.me";
-const OG_IMAGE = `${SITE_URL}/assets/headshot_full.png`; 
+const OG_IMAGE = `${SITE_URL}/headshot-full.png`; 
 
 const TITLE = "Eve Juneau | Games Marketing & Content Specialist | Montréal";
 const DESCRIPTION =
