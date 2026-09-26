@@ -241,7 +241,7 @@ export function Welcome() {
 
             <img className="w-[70%] h-[40%] lg:hidden overflow-hidden self-center object-cover object-top" src={headshot}></img>
             <div className="flex flex-row self-center lg:self-start text-2xl lg:text-[2em]" ><h1 className="title wave w-[2em] ">👋</h1><h1 className="title"> Hi, I'm Eve!</h1></div>
-            <p className="">I'm a game developer and marketer based in Montréal, working in Godot. I've been in the games industry for three years doing programming and marketting, and I have nearly ten years of building websites.</p>
+            <p className="">I'm a game developer and marketer based in Montréal, working in Godot. I've been in the games industry for three years doing programming and marketing, and I have nearly ten years of building websites.</p>
             <p className=""><strong>I'm passionate about creating engaging user experiences.</strong></p>
             <a className="button w-fit self-center lg:self-start" onClick={() => document.getElementById("contact")?.scrollIntoView()}>Get in touch!</a>
             
@@ -259,7 +259,7 @@ export function Welcome() {
           </div>
 
           <div className="flex flex-col items-center gap-8 mt-[2em] lg:mt-0 lg:w-[30vw]">
-            <img className="w-[70%] h-[40%] hidden lg:block overflow-hidden object-cover object-top" src={headshot}></img>
+            <img className="w-[70%] h-[40%] hidden lg:block overflow-hidden object-cover object-top" src={headshot} alt="A professional headshot of Eve Juneau"></img>
             <div className="lg:w-[70%] callout flex flex-col items-center p-4"><p><strong>Marketing</strong></p><p className="text-center">Copywriting, social media strategy, target audience</p></div>
             <div className="lg:w-[70%] callout flex flex-col items-center p-4 "><p><strong>Websites</strong></p><p className="text-center">Design, updates, management, Search Engine Optimization (SEO)</p></div>
             <div className="lg:w-[70%] callout flex flex-col items-center p-4 "><p><strong>Project Management</strong></p><p className="text-center">Stakeholder reporting, Daily Scrum, client communications</p></div>
@@ -354,7 +354,7 @@ export function Welcome() {
                 <p className="title text-xl lg:text-2xl">by</p>
                 <h3 className ="title text-2xl lg:text-4xl">{albums[0].artist}</h3>
               </div>
-              <img src={albums[0].img} className='lg:w-[20vw]'/>
+              <img src={albums[0].img} alt={`${albums[0].title} by ${albums[0].artist}`} className='lg:w-[20vw]'/>
             <div className =" flex flex-col gap-8 w-[100%] lg:w-[60%]">
               <p className="text-center">Available to listen here:</p>
               <div className="flex flex-col lg:flex-row center items-center gap-8 w-[100%]">
