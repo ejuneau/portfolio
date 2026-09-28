@@ -343,8 +343,8 @@ export function Welcome() {
         <div className="flex flex-col w-[75vw] gap-8 " id="about">
           <h1 className="mt-[7.5em]"><strong>A little more about me!</strong></h1>
           <p>My name is Eve Juneau (they/she), a developer based in Montréal, Canada. Specializing in <strong>web design</strong> via React and <strong>game development</strong> in Godot, I love the ways stories connect us and share ourselves with the world.</p>
-          <p>With over a decade of experience both in freelance as well as contract work, I offer services ranging from consultation, to designing, to fully building and executing your plans and bring them to life.</p>
-          <p>To get in touch regarding any of the above, please feel free to reach me at the contact form below!</p>
+          <p>With over a decade of experience both in freelance as well as contract work, I offer services ranging from consultation, to designing, to fully building and executing your plans and bringing them to life.</p>
+          <p>To get in touch regarding any of the above, please feel free to reach out using the <a onClick={() => document.getElementById("contact")?.scrollIntoView()}><u>contact</u></a> section below!</p>
           <p>Here's an album that I'm listening to these days:</p>
           
 
@@ -388,9 +388,10 @@ export function Welcome() {
           
         </div>
 
-        <footer className="flex flex-col items-center w-[100vw] gap-4 h-[5em] mt-[5em] lg:mt-0 pl-[15vw] pr-[15vw] text-sm">
-          <p>Copyright {new Date().getFullYear()} Eve Juneau</p>
-          <p>Made with ❤️ in <a href="https://reactrouter.com/">React Router</a></p>
+        <footer className="flex flex-col items-center w-[100vw] gap-4 mt-[5em] lg:mt-0 pl-[15vw] pr-[15vw] pb-[2.5em] text-sm">
+          <p>Copyright {new Date().getFullYear()} Eve Juneau | Made with ❤️ in <u><a href="https://reactrouter.com/" target="_blank" rel="noreferrer">React Router</a></u></p>
+          <p>Title font: <u><a href="https://www.behance.net/gallery/125957713/Magnolia-Type-Free-Typeface" target="_blank" rel="noreferrer">Magnolia</a></u></p>
+          <p>Body font: <u><a href="https://www.brailleinstitute.org/freefont/" target="_blank" rel="noreferrer">Atkinson Hyperlegible® Next</a></u></p>
         </footer>
       </div>
     </main>

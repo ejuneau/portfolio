@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: atkinsonHyperlegibleNext;
+  src: url(../assets/AtkinsonHyperlegibleNext-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: atkinsonHyperlegibleNext;
+  src: url(../assets/AtkinsonHyperlegibleNext-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: magnolia;
+  src: url(../assets/Magnolia.ttf);
+  /* font-variant-; */
+}
+
 :root {
   --light-bg-color: #EEE7D7;
   --light-bg-accent: #E7DDC6;
@@ -37,7 +54,7 @@ header {
 }
 
 @theme {
-  --font-sans: "Poppins", "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-sans: "atkinsonHyperlegibleNext", "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
@@ -75,7 +92,7 @@ a:hover {
   animation-timing-function: ease-in-out;
 }
 .title {
-    font-family: 'Libre Bodoni Variable', serif;
+    font-family: 'Magnolia', 'Libre Bodoni Variable', serif;
     /* font-size: 2em; */
 }
 .highlight {
