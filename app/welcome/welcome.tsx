@@ -271,12 +271,12 @@ export function Welcome() {
           <ul onScroll={() => updateActiveDotMarketing()} className="flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 carousel-slides-marketing place-content-between pb-0 overflow-x-scroll lg:overflow-hidden snap-x snap-mandatory ">
             {marketing_portfolio.map(marketing_resource => 
                     <li key={marketing_resource.text} className="carousel-slide-marketing flex flex-col w-[80vw] lg:w-[20vw] snap-center shrink-0  grow gap-4 justify-start">
-                      <a href={marketing_resource.href} target="_blank" rel="noreferrer">
+                      <a href={marketing_resource.href} className="slide-image" target="_blank" rel="noreferrer">
                         <div>
                           <img src={marketing_resource.img}/>
                         </div>
                       </a>
-                      <a href={marketing_resource.href}><strong>{marketing_resource.text}</strong></a>
+                      <a className="slide-image-text" href={marketing_resource.href}><strong>{marketing_resource.text}</strong></a>
                       <p>Role: {marketing_resource.role}</p>
                       <ul className="list-disc ml-[2em]">
                         {marketing_resource.tasks.map(task => 
@@ -303,12 +303,12 @@ export function Welcome() {
           <ul onScroll={() => updateActiveDotGaming()} className="carousel-slides-gaming flex flex-row pl-[12.5vw] lg:pl-0 pr-[12.5vw] lg:pr-0 gap-16 place-content-between overflow-x-scroll snap-x snap-mandatory ">
             {games.map(game => 
                     <li key={game.name} className="flex flex-col w-[80vw] lg:w-[20vw] carousel-slide-gaming snap-center shrink-0  grow gap-4 justify-start">
-                      <a href={game.href} target="_blank" rel="noreferrer">
+                      <a href={game.href} className="slide-image" target="_blank" rel="noreferrer">
                         <div>
                          <img src={game.img}/>
                         </div>
                       </a>
-                      <a href={game.href}><strong>{game.name}</strong></a>
+                      <a className="slide-image-text" href={game.href}><strong>{game.name}</strong></a>
                       <p>Role: {game.role}</p>
                       <ul className="list-disc ml-[2em]">
                         {game.tasks.map(task => 

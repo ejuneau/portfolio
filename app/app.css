@@ -31,8 +31,11 @@ a div {
   overflow: hidden;
   border-radius: 15px;
 }
-a:hover div img {
+a:hover div img, a:has(+ a.slide-image-text:hover) div img {
   scale: 110%;
+}
+a.slide-image:hover + a.slide-image-text {
+  text-decoration-color: var(--dark-bg-color);
 }
 
 * {
@@ -253,14 +256,15 @@ img {
   transition: all 0.3s ease-in-out;
 
 }
-  .button:hover{
-      /* background-color: var(--dark-bg-accent); */
+.button:hover {
       opacity: 0.6;
-  }
+}
 
-  .carousel-slides-gaming, .carousel-slides-marketing {
-    scrollbar-width: none;
-  }
+.carousel-slides-gaming, .carousel-slides-marketing {
+  scrollbar-width: none;
+}
+
+
 
 .carousel-dots-marketing, .carousel-dots-gaming {
   /* position: absolute; */
